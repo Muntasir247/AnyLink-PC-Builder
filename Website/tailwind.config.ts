@@ -31,6 +31,7 @@ const config: Config = {
           DEFAULT: "var(--primary)",
           foreground: "var(--on-primary)",
         },
+        "on-primary": "var(--on-primary)",
         outline: {
           DEFAULT: "var(--outline)",
           variant: "var(--outline-variant)",

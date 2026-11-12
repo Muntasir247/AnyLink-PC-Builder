@@ -23,7 +23,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variantStyles = {
       solid:
-        "bg-primary text-on-primary hover:opacity-90 shadow-md",
+        "bg-primary text-primary-foreground hover:opacity-90 shadow-md",
       glass:
         "bg-surface text-foreground border border-outline hover:bg-surface-bright/20 shadow-glass",
       ghost:

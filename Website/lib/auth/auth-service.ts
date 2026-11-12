@@ -139,14 +139,42 @@ export async function signInWithGoogle(): Promise<{ success: boolean; error?: st
   const supabase = getSupabaseBrowserClient();
 
   if (supabase && isSupabaseConfigured()) {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: {
-        redirectTo: `${window.location.origin}/api/auth/callback`,
-      },
-    });
-    if (error) return { success: false, error: error.message };
-    return { success: true };
+    try {
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+          redirectTo: `${typeof window !== "undefined" ? window.location.origin : ""}/api/auth/callback`,
+          skipBrowserRedirect: true,
+        },
+      });
+
+      if (error) return { success: false, error: error.message };
+
+      if (data?.url) {
+        // Probe endpoint to ensure Google provider is enabled in Supabase before redirecting
+        try {
+          const resp = await fetch(data.url, { method: "GET" });
+          if (resp.status >= 400) {
+            const body = await resp.json().catch(() => null);
+            if (body?.msg?.includes("provider is not enabled") || body?.error_code === "validation_failed") {
+              return {
+                success: false,
+                error: "Google sign-in is not yet enabled in this Supabase project. Please log in with email/password or magic link.",
+              };
+            }
+          }
+        } catch {
+          // If network probe is CORS restricted, continue with normal redirect
+        }
+
+        window.location.href = data.url;
+        return { success: true };
+      }
+
+      return { success: false, error: "Failed to initialize Google sign in" };
+    } catch (err: unknown) {
+      return { success: false, error: err instanceof Error ? err.message : "Google sign in failed" };
+    }
   }
 
   // Mock Google sign in

@@ -45,13 +45,18 @@ export default function SignUpPage() {
   };
 
   const handleGoogleSignIn = async () => {
+    setError(null);
     setLoading(true);
     try {
       const res = await signInWithGoogle();
-      if (res.success) {
+      if (!res.success) {
+        setError(res.error || "Google sign-in is not available. Please use email and password.");
+      } else {
         await migrateGuestBuild("google-usr");
         router.push("/my-builds");
       }
+    } catch {
+      setError("Failed to initiate Google sign in");
     } finally {
       setLoading(false);
     }
