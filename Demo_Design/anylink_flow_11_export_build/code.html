@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary": "#c7c6ca", "surface-dim": "#131313", "error-container": "#93000a", "surface": "#131313", "secondary-fixed-dim": "#c7c6ca", "on-tertiary-fixed-variant": "#454747", "surface-container-highest": "#353534", "tertiary-container": "#e2e2e2", "surface-tint": "#c6c6c7", "on-tertiary-fixed": "#1a1c1c", "on-secondary-fixed": "#1a1b1f", "primary-container": "#e2e2e2", "on-primary": "#2f3131", "tertiary-fixed-dim": "#c6c6c7", "on-background": "#e5e2e1", "on-surface": "#e5e2e1", "primary-fixed-dim": "#c6c6c7", "on-secondary-fixed-variant": "#46474a", "surface-container-high": "#2a2a2a", "tertiary-fixed": "#e2e2e2", "inverse-surface": "#e5e2e1", "surface-bright": "#3a3939", "on-primary-fixed": "#1a1c1c", "on-primary-container": "#636565", "on-tertiary": "#2f3131", "surface-variant": "#353534", "on-error-container": "#ffdad6", "secondary-container": "#48494c", "surface-container-lowest": "#0e0e0e", "secondary-fixed": "#e3e2e6", "on-surface-variant": "#c4c7c8", "on-secondary-container": "#b8b8bc", "inverse-primary": "#5d5f5f", "on-secondary": "#2f3034", "background": "#131313", "on-tertiary-container": "#636565", "outline": "#8e9192", "primary": "#ffffff", "outline-variant": "#444748", "primary-fixed": "#e2e2e2", "inverse-on-surface": "#313030", "surface-container-low": "#1c1b1b", "error": "#ffb4ab", "on-primary-fixed-variant": "#454747", "surface-container": "#201f1f", "tertiary": "#ffffff", "on-error": "#690005" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "gutter-lg": "1.5rem", "space-lg": "1.5rem", "margin-lg": "3rem", "margin": "1rem", "gutter": "1rem", "space-sm": "0.5rem", "space-xl": "2rem", "space-2xl": "3rem", "space-xs": "0.25rem", "margin-md": "2rem" }, "fontFamily": { "headline-sm": ["Inter"], "mono-metric": ["JetBrains Mono"], "headline-lg": ["Inter"], "mono-label": ["JetBrains Mono"], "display": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Inter"], "body-lg": ["Inter"], "headline-lg-mobile": ["Inter"], "mono-data": ["JetBrains Mono"], "display-mobile": ["Inter"], "body-md": ["Inter"] }, "fontSize": { "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "mono-metric": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "500" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "mono-label": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500" }], "display": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "mono-data": ["13px", { "lineHeight": "18px", "letterSpacing": "0", "fontWeight": "400" }], "display-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface-container-lowest font-body-md text-body-md text-on-surface relative min-h-screen selection:bg-primary selection:text-on-primary"><div class="pointer-events-none fixed inset-0 z-0 overflow-hidden"><div class="absolute -top-32 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/[0.06] blur-[120px]"></div><div class="absolute top-1/2 -right-24 w-[600px] h-[600px] rounded-full bg-secondary/[0.05] blur-[140px]"></div><div class="absolute -bottom-20 left-1/3 w-[450px] h-[450px] rounded-full bg-primary/[0.05] blur-[120px]"></div></div><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest/80 backdrop-blur-2xl z-50 flex flex-col justify-between p-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col gap-space-lg"><div class="flex items-center gap-space-sm px-space-sm pt-space-xs"><div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center"><span class="material-symbols-outlined text-primary text-[20px]">deployed_code</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-semibold">ANYLINK</span><span class="font-mono-label text-mono-label text-on-surface-variant uppercase tracking-widest">ARCHITECT OS</span></div></div><div class="px-space-sm pt-space-xs"><span class="font-mono-label text-mono-label text-on-surface-variant uppercase">Workstation Core</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-medium rounded-lg shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15)]"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-body-md text-body-md">Overview</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-medium rounded-lg shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15)]" data-path="builder-canvas" href="#"><span class="material-symbols-outlined text-[20px]">memory</span><span class="font-body-md text-body-md">Builder Canvas</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="compatibility-advisory" href="#"><span class="material-symbols-outlined text-[20px]">fact_check</span><span class="font-body-md text-body-md">Compatibility Advisory</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="telemetry-and-thermals" href="#"><span class="material-symbols-outlined text-[20px]">thermostat</span><span class="font-body-md text-body-md">Telemetry &amp; Thermals</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="build-orders" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-body-md text-body-md">Build Orders</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="core-settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-body-md text-body-md">Core Settings</span></a></nav></div><div class="p-space-md rounded-xl bg-surface-container-high/60 backdrop-blur-xl flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-mono-label text-mono-label text-on-surface-variant uppercase">Power Budget</span><span class="font-mono-label text-mono-label text-on-surface-variant">ACTIVE</span></div><div class="flex items-baseline justify-between"><span class="font-mono-metric text-mono-metric text-primary font-semibold">850W</span><span class="font-mono-label text-mono-label text-on-surface uppercase tracking-wider">TITANIUM</span></div><div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden mt-space-xs"><div class="bg-primary h-full rounded-full w-[64%]"></div></div><div class="flex justify-between items-center mt-space-xs"><span class="font-mono-label text-mono-label text-on-surface-variant">LOAD 544W</span><span class="font-mono-label text-mono-label text-on-surface-variant">EFF 94.2%</span></div></div></aside><div class="pl-72 flex flex-col min-h-screen relative z-10"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-2xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><nav class="flex items-center gap-space-lg" data-active-classes="text-primary font-medium"><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="overview" href="#">Overview</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="part-picker" href="#">Part Picker</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="compatibility-advisory" href="#">Compatibility</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="telemetry-and-thermals" href="#">Diagnostics</a></nav><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-high/60"><span class="w-2 h-2 rounded-full bg-primary inline-block"></span><span class="font-mono-label text-mono-label text-on-surface-variant uppercase">HARDWARE SYNCED</span></div><button class="w-10 h-10 rounded-xl flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button><button class="w-10 h-10 rounded-xl flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 w-full flex-1 px-space-lg pb-space-2xl"><div class="flex flex-col w-full relative">
+<!-- Dimmed & Heavily Blurred Dashboard Canvas Underneath -->
+<div class="w-full grid grid-cols-12 gap-space-lg opacity-25 filter blur-[18px] pointer-events-none select-none transition-all duration-700">
+<!-- Mock Top Stats Row -->
+<div class="col-span-12 grid grid-cols-4 gap-space-md">
+<div class="p-space-lg rounded-xl bg-surface-container flex flex-col gap-space-xs shadow-sm">
+<span class="font-mono-label text-mono-label text-on-surface-variant uppercase tracking-wider">SYSTEM EFFICIENCY</span>
+<div class="flex items-baseline justify-between">
+<span class="font-mono-metric text-mono-metric text-primary">96.4%</span>
+<span class="font-mono-label text-mono-label text-on-surface-variant">CURVE OPTIMAL</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden mt-space-xs">
+<div class="bg-primary h-full w-4/5"></div>
+</div>
+</div>
+<div class="p-space-lg rounded-xl bg-surface-container flex flex-col gap-space-xs shadow-sm">
+<span class="font-mono-label text-mono-label text-on-surface-variant uppercase tracking-wider">THERMAL CEILING</span>
+<div class="flex items-baseline justify-between">
+<span class="font-mono-metric text-mono-metric text-primary">74.2°C</span>
+<span class="font-mono-label text-mono-label text-on-surface-variant">PEAK LOAD</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden mt-space-xs">
+<div class="bg-primary h-full w-3/5"></div>
+</div>
+</div>
+<div class="p-space-lg rounded-xl bg-surface-container flex flex-col gap-space-xs shadow-sm">
+<span class="font-mono-label text-mono-label text-on-surface-variant uppercase tracking-wider">COMPATIBILITY SCORE</span>
+<div class="flex items-baseline justify-between">
+<span class="font-mono-metric text-mono-metric text-primary">100 / 100</span>
+<span class="font-mono-label text-mono-label text-on-surface-variant">VERIFIED</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden mt-space-xs">
+<div class="bg-primary h-full w-full"></div>
+</div>
+</div>
+<div class="p-space-lg rounded-xl bg-surface-container flex flex-col gap-space-xs shadow-sm">
+<span class="font-mono-label text-mono-label text-on-surface-variant uppercase tracking-wider">GROSS ESTIMATE</span>
+<div class="flex items-baseline justify-between">
+<span class="font-mono-metric text-mono-metric text-primary">$1,968.96</span>
+<span class="font-mono-label text-mono-label text-on-surface-variant">USD</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden mt-space-xs">
+<div class="bg-primary h-full w-2/3"></div>
+</div>
+</div>
+</div>
+<!-- Mock Main Workstation Workspace Grid -->
+<div class="col-span-8 p-space-xl rounded-xl bg-surface-container-low flex flex-col gap-space-lg">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">developer_board</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-primary">Chassis Matrix Topology</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Active Configuration: Revision 04 (Dual Chamber ATX)</div>
+</div>
+</div>
+<span class="font-mono-label text-mono-label text-on-surface-variant uppercase px-3 py-1 bg-surface-container-high rounded-full">SOCKET AM5 READY</span>
+</div>
+<div class="h-96 rounded-xl bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-[72px]">grid_4x4</span>
+</div>
+</div>
+<!-- Mock Right Inspector Pane -->
+<div class="col-span-4 p-space-lg rounded-xl bg-surface-container-low flex flex-col gap-space-md">
+<span class="font-mono-label text-mono-label text-on-surface-variant uppercase tracking-wider">FIRMWARE ADVISORY</span>
+<div class="p-space-md rounded-lg bg-surface-container flex flex-col gap-space-xs">
+<span class="font-body-md text-body-md text-primary font-medium">AGESA 1.0.0.7c Verified</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">EXPO profile sub-timings locked to DDR5-6000 CL30 standard.</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container flex flex-col gap-space-xs">
+<span class="font-body-md text-body-md text-primary font-medium">Clearance Check Pass</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">GPU length 337mm clears frontal 360mm radiator by 28mm.</span>
+</div>
+<div class="h-44 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-[48px]">tune</span>
+</div>
+</div>
+</div>
+<!-- Modal Backdrop Overlay with Concentrated Optical Diffusion -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-space-md md:p-space-xl bg-surface-container-lowest/80 backdrop-blur-2xl transition-opacity duration-300" id="exportModalBackdrop">
+<!-- Ambient Specular Refraction Glow Behind Centered Modal -->
+<div class="absolute w-[640px] h-[640px] rounded-full bg-primary/[0.07] blur-[150px] pointer-events-none"></div>
+<!-- Modal Container: Pure Monochrome Frosted-Glass Card -->
+<div aria-labelledby="modalTitle" aria-modal="true" class="relative w-full max-w-4xl rounded-[20px] bg-surface-container-high/40 backdrop-blur-3xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.18),0_32px_64px_-16px_rgba(0,0,0,0.85)] flex flex-col overflow-hidden max-h-[942px]" role="dialog">
+<!-- Top Subtle Refractive Sheen Accent -->
+<div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent pointer-events-none"></div>
+<!-- Modal Header Section -->
+<div class="px-space-xl pt-space-xl pb-space-lg flex items-start justify-between gap-space-lg">
+<div class="flex flex-col gap-1.5 flex-1 min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-mono-label text-mono-label text-on-surface-variant uppercase tracking-widest">MANIFEST EXPORTER</span>
+<span class="text-on-surface-variant font-mono-label text-mono-label">•</span>
+<span class="font-mono-label text-mono-label text-on-surface-variant">ID // BLD-7800-R04</span>
+</div>
+<!-- Editable Build Name Input Row -->
+<div class="flex items-center gap-space-sm group mt-1">
+<input aria-label="Build name" class="bg-surface-container-highest/40 hover:bg-surface-container-highest/60 focus:bg-surface-container-highest/80 text-primary font-headline-lg text-headline-lg tracking-tight px-space-sm py-1 rounded-lg w-full max-w-lg transition-all outline-none shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] focus:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.25)]" id="buildNameInput" type="text" value="My Dream Rig — Rev 04"/>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" onclick="document.getElementById('buildNameInput').focus(); document.getElementById('buildNameInput').select();" title="Edit build name" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+            Configure formats, specs, and shareable manifests
+          </p>
+</div>
+<!-- Close Button -->
+<button aria-label="Close export dialog" class="w-10 h-10 rounded-xl bg-surface-container-highest/30 hover:bg-surface-container-highest/70 text-on-surface-variant hover:text-primary flex items-center justify-center transition-all shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12)] shrink-0" id="closeModalBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body: 2-Column Split Pane -->
+<div class="px-space-xl py-space-sm grid grid-cols-1 md:grid-cols-12 gap-space-lg overflow-y-auto flex-1">
+<!-- Left Column: Live Document Preview Sheet -->
+<div class="md:col-span-5 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-mono-label text-mono-label text-on-surface-variant uppercase tracking-wider">LIVE SPEC SHEET PREVIEW</span>
+<span class="font-mono-label text-mono-label text-on-surface-variant">A4 / HIGH-RES</span>
+</div>
+<!-- Document Sheet Representation -->
+<div class="relative rounded-2xl bg-surface-container-lowest/90 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0_12px_28px_-6px_rgba(0,0,0,0.6)] p-space-lg flex flex-col justify-between aspect-[1/1.34] overflow-hidden group">
+<!-- Diagonal Watermark Stamp -->
+<div class="absolute -right-8 -top-8 w-36 h-36 rounded-full bg-primary/[0.03] blur-xl pointer-events-none"></div>
+<!-- Document Header -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">deployed_code</span>
+<span class="font-mono-label text-mono-label text-primary uppercase font-bold tracking-widest">ANYLINK</span>
+</div>
+<span class="font-mono-label text-mono-label text-on-surface-variant">REV 04.2</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-headline-sm text-headline-sm text-primary font-semibold tracking-tight truncate" id="previewTitle">My Dream Rig</span>
+<span class="font-mono-label text-mono-label text-on-surface-variant">ARCHITECT OS ENGINE EXPORT</span>
+</div>
+<!-- Compact Parts Listing -->
+<div class="flex flex-col gap-space-xs mt-space-xs">
+<!-- Part Item 1 -->
+<div class="flex items-baseline justify-between py-1 hover:bg-surface-container-high/30 px-1.5 rounded transition-colors">
+<div class="flex flex-col min-w-0 pr-2">
+<span class="font-body-sm text-body-sm text-on-surface truncate">AMD Ryzen 7 7800X3D</span>
+<span class="font-mono-label text-mono-label text-on-surface-variant">8C / 16T • 120W TDP</span>
+</div>
+<span class="font-mono-data text-mono-data text-primary shrink-0">$449.00</span>
+</div>
+<!-- Part Item 2 -->
+<div class="flex items-baseline justify-between py-1 hover:bg-surface-container-high/30 px-1.5 rounded transition-colors">
+<div class="flex flex-col min-w-0 pr-2">
+<span class="font-body-sm text-body-sm text-on-surface truncate">ASUS ROG Strix B650E-F</span>
+<span class="font-mono-label text-mono-label text-on-surface-variant">PCIe 5.0 • ATX</span>
+</div>
+<span class="font-mono-data text-mono-data text-primary shrink-0">$279.99</span>
+</div>
+<!-- Part Item 3 -->
+<div class="flex items-baseline justify-between py-1 hover:bg-surface-container-high/30 px-1.5 rounded transition-colors">
+<div class="flex flex-col min-w-0 pr-2">
+<span class="font-body-sm text-body-sm text-on-surface truncate">G.Skill Trident Z5 Neo 32GB</span>
+<span class="font-mono-label text-mono-label text-on-surface-variant">DDR5-6000 CL30</span>
+</div>
+<span class="font-mono-data text-mono-data text-primary shrink-0">$119.99</span>
+</div>
+<!-- Part Item 4 -->
+<div class="flex items-baseline justify-between py-1 hover:bg-surface-container-high/30 px-1.5 rounded transition-colors">
+<div class="flex flex-col min-w-0 pr-2">
+<span class="font-body-sm text-body-sm text-on-surface truncate">MSI Gaming X Trio RTX 4080 Super</span>
+<span class="font-mono-label text-mono-label text-on-surface-variant">16GB GDDR6X • Ada</span>
+</div>
+<span class="font-mono-data text-mono-data text-primary shrink-0">$1,029.99</span>
+</div>
+<!-- Part Item 5 -->
+<div class="flex items-baseline justify-between py-1 hover:bg-surface-container-high/30 px-1.5 rounded transition-colors">
+<div class="flex flex-col min-w-0 pr-2">
+<span class="font-body-sm text-body-sm text-on-surface truncate">EVGA SuperNOVA 550 G3</span>
+<span class="font-mono-label text-mono-label text-on-surface-variant">80+ Gold Fully-Mod</span>
+</div>
+<span class="font-mono-data text-mono-data text-primary shrink-0">$89.99</span>
+</div>
+</div>
+</div>
+<!-- Document Footer / Total Highlight -->
+<div class="pt-space-md flex flex-col gap-1 bg-surface-container-low/60 -mx-space-lg -mb-space-lg p-space-md px-space-lg">
+<div class="flex items-baseline justify-between">
+<span class="font-mono-label text-mono-label text-on-surface-variant uppercase tracking-wider">TOTAL ESTIMATE</span>
+<span class="font-mono-metric text-mono-metric text-primary font-semibold">$1,968.96 <span class="font-mono-label text-mono-label text-on-surface-variant">USD</span></span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-mono-label text-mono-label">
+<span>5 of 9 parts selected</span>
+<span>520W TDP EST.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive Export Format Options -->
+<div class="md:col-span-7 flex flex-col gap-space-sm justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-mono-label text-mono-label text-on-surface-variant uppercase tracking-wider">SELECT OUTPUT DESTINATION</span>
+<span class="font-mono-label text-mono-label text-on-surface-variant">5 CHANNELS</span>
+</div>
+<div class="flex flex-col gap-2" id="formatOptionsList">
+<!-- Option 1: Share link (Guest locked / Account required) -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-highest/20 hover:bg-surface-container-highest/35 transition-all cursor-pointer group shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]" data-export-format="share-link">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-container-highest/40 flex items-center justify-center text-primary group-hover:scale-105 transition-transform shrink-0">
+<span class="material-symbols-outlined text-[20px]">link</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-md text-body-md text-primary font-medium">Share link</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-mono-label text-mono-label uppercase tracking-wide">
+<span class="material-symbols-outlined text-[12px]">lock</span>
+                        Account required
+                      </span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Generate a public read-only web link</span>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</div>
+</div>
+<!-- Option 2: PDF Document (Selected/Active State) -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-highest/70 ring-0 transition-all cursor-pointer group shadow-[inset_0_1px_0_0_rgba(255,255,255,0.22),0_4px_16px_rgba(0,0,0,0.3)]" data-export-format="pdf" id="option-pdf">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-md text-body-md text-primary font-semibold">PDF Document</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-lowest text-primary font-mono-label text-mono-label uppercase tracking-wide">
+                        READY
+                      </span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Clean high-res A4 printable spec sheet</span>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+</div>
+<!-- Option 3: Spreadsheet (CSV) -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-highest/20 hover:bg-surface-container-highest/40 transition-all cursor-pointer group shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]" data-export-format="csv">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-container-highest/40 flex items-center justify-center text-primary group-hover:scale-105 transition-transform shrink-0">
+<span class="material-symbols-outlined text-[20px]">table_chart</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-md text-body-md text-primary font-medium">Spreadsheet (CSV)</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Export tabular data with store links &amp; SKUs</span>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant group-hover:text-primary shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[14px]">radio_button_unchecked</span>
+</div>
+</div>
+<!-- Option 4: Image for social -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-highest/20 hover:bg-surface-container-highest/40 transition-all cursor-pointer group shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]" data-export-format="social">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-container-highest/40 flex items-center justify-center text-primary group-hover:scale-105 transition-transform shrink-0">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-md text-body-md text-primary font-medium">Image for social</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Formatted 1080×1350 card with parts breakdown</span>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant group-hover:text-primary shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[14px]">radio_button_unchecked</span>
+</div>
+</div>
+<!-- Option 5: Copy as text / Markdown -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-highest/20 hover:bg-surface-container-highest/40 transition-all cursor-pointer group shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]" data-export-format="markdown">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-container-highest/40 flex items-center justify-center text-primary group-hover:scale-105 transition-transform shrink-0">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-md text-body-md text-primary font-medium">Copy as text / Markdown</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Reddit, Discord, and forum-ready markdown table</span>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant group-hover:text-primary shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[14px]">radio_button_unchecked</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Config Micro-Toggles -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest/50 flex items-center justify-between shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)] mt-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">verified_user</span>
+<span class="font-mono-label text-mono-label text-on-surface-variant uppercase">INCLUDE PART COMPATIBILITY AUDIT TRAIL</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="auditTrailToggle" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-primary after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-surface-bright"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-space-xl py-space-md mt-space-sm bg-surface-container-lowest/70 backdrop-blur-md flex items-center justify-between shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-mono-label text-mono-label">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>ESTIMATED PAYLOAD: 2.1 MB</span>
+</div>
+<div class="flex items-center gap-space-md">
+<!-- Cancel Ghost Button -->
+<button class="px-space-md h-10 rounded-xl font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-surface-container-highest/30 transition-all" id="cancelExportBtn" type="button">
+            Cancel
+          </button>
+<!-- Solid High-Contrast White Action Button -->
+<button class="px-space-lg h-10 rounded-xl bg-primary text-on-primary font-body-md text-body-md font-medium hover:opacity-90 active:scale-[0.98] transition-all flex items-center gap-space-xs shadow-md" id="primaryExportBtn" type="button">
+<span id="exportButtonText">Export build</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+    (function () {
+      const buildNameInput = document.getElementById('buildNameInput');
+      const previewTitle = document.getElementById('previewTitle');
+      const formatOptions = document.querySelectorAll('#formatOptionsList > div');
+      const exportButtonText = document.getElementById('exportButtonText');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const cancelExportBtn = document.getElementById('cancelExportBtn');
+      const backdrop = document.getElementById('exportModalBackdrop');
+
+      // Live title synchronisation
+      if (buildNameInput && previewTitle) {
+        buildNameInput.addEventListener('input', function (e) {
+          const val = e.target.value.trim();
+          previewTitle.textContent = val.length > 0 ? val : 'Untitled Rig';
+        });
+      }
+
+      // Interactive format row switcher
+      formatOptions.forEach(function (option) {
+        option.addEventListener('click', function () {
+          const format = this.getAttribute('data-export-format');
+
+          // Reset all rows to inactive style
+          formatOptions.forEach(function (row) {
+            row.classList.remove('bg-surface-container-highest/70', 'shadow-[inset_0_1px_0_0_rgba(255,255,255,0.22),0_4px_16px_rgba(0,0,0,0.3)]');
+            row.classList.add('bg-surface-container-highest/20');
+
+            const iconContainer = row.querySelector('.shrink-0:first-child');
+            if (iconContainer) {
+              iconContainer.classList.remove('bg-primary', 'text-on-primary');
+              iconContainer.classList.add('bg-surface-container-highest/40', 'text-primary');
+            }
+
+            const title = row.querySelector('.font-body-md');
+            if (title) {
+              title.classList.remove('font-semibold');
+              title.classList.add('font-medium');
+            }
+
+            const indicator = row.querySelector('.shrink-0:last-child');
+            if (indicator && row.getAttribute('data-export-format') !== 'share-link') {
+              indicator.className = 'w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant group-hover:text-primary shrink-0 transition-colors';
+              indicator.innerHTML = '<span class="material-symbols-outlined text-[14px]">radio_button_unchecked</span>';
+            }
+          });
+
+          // Set clicked row as active
+          this.classList.remove('bg-surface-container-highest/20');
+          this.classList.add('bg-surface-container-highest/70', 'shadow-[inset_0_1px_0_0_rgba(255,255,255,0.22),0_4px_16px_rgba(0,0,0,0.3)]');
+
+          const activeIconContainer = this.querySelector('.shrink-0:first-child');
+          if (activeIconContainer) {
+            activeIconContainer.classList.remove('bg-surface-container-highest/40', 'text-primary');
+            activeIconContainer.classList.add('bg-primary', 'text-on-primary');
+          }
+
+          const activeTitle = this.querySelector('.font-body-md');
+          if (activeTitle) {
+            activeTitle.classList.remove('font-medium');
+            activeTitle.classList.add('font-semibold');
+          }
+
+          const activeIndicator = this.querySelector('.shrink-0:last-child');
+          if (activeIndicator && format !== 'share-link') {
+            activeIndicator.className = 'w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0';
+            activeIndicator.innerHTML = '<span class="material-symbols-outlined text-[14px] font-bold">check</span>';
+          }
+
+          // Dynamic label update on CTA
+          if (exportButtonText) {
+            if (format === 'share-link') {
+              exportButtonText.textContent = 'Sign in to share link';
+            } else if (format === 'pdf') {
+              exportButtonText.textContent = 'Download PDF spec';
+            } else if (format === 'csv') {
+              exportButtonText.textContent = 'Generate CSV';
+            } else if (format === 'social') {
+              exportButtonText.textContent = 'Render social card';
+            } else if (format === 'markdown') {
+              exportButtonText.textContent = 'Copy markdown table';
+            }
+          }
+        });
+      });
+
+      // Micro interaction on dismissal
+      const dismissModal = function () {
+        if (backdrop) {
+          backdrop.classList.add('opacity-0', 'pointer-events-none');
+          setTimeout(function () {
+            backdrop.style.display = 'none';
+          }, 300);
+        }
+      };
+
+      if (closeModalBtn) closeModalBtn.addEventListener('click', dismissModal);
+      if (cancelExportBtn) cancelExportBtn.addEventListener('click', dismissModal);
+    })();
+  </script>
+</div></main></div></body></html>

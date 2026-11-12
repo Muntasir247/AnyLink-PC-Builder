@@ -1,0 +1,58 @@
+# Dependencies
+node_modules/
+*/node_modules/
+.pnp
+.pnp.*
+.yarn/*
+
+# Next.js Build & Outputs
+.next/
+*/.next/
+out/
+*/out/
+build/
+*/build/
+dist/
+*/dist/
+
+# TypeScript Cache
+*.tsbuildinfo
+*/tsconfig.tsbuildinfo
+
+# Sensitive Environment Variables & Secrets
+.env
+.env*.local
+.env.local
+*/.env
+*/.env*.local
+*/.env.local
+!.env.example
+!*/.env.example
+
+# Vercel Deployment
+.vercel/
+*/.vercel/
+
+# Test & Coverage Outputs
+coverage/
+*/coverage/
+test-results/
+*/test-results/
+playwright-report/
+*/playwright-report/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# OS & Editor Metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
