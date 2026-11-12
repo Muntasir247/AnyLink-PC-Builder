@@ -5,7 +5,7 @@ import { LandingHero } from "@/components/landing/landing-hero";
 import { TopBar } from "@/components/layout/top-bar";
 import { Sidebar } from "@/components/layout/sidebar";
 import { MobileBottomBar } from "@/components/layout/mobile-bottom-bar";
-import { ControlPanel } from "@/components/builder/control-panel";
+import { LinkIngestPanel, TotalSummaryCard } from "@/components/builder/control-panel";
 import { SlotList } from "@/components/builder/slot-list";
 import { CompatibilityPanel } from "@/components/builder/compatibility-panel";
 import { ReviewModal } from "@/components/modals/review-modal";
@@ -204,74 +204,92 @@ export default function HomePage() {
         {/* Slim Sidebar */}
         <Sidebar />
 
-        {/* Two-Column Main Builder */}
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            {/* Left Column: Sticky Control Panel + Compatibility Panel */}
-            <div className="lg:col-span-5 xl:col-span-4 space-y-6">
-              <ControlPanel
-                url={url}
-                onUrlChange={setUrl}
-                selectedCategory={selectedCategory}
-                onCategoryChange={setSelectedCategory}
-                onAnalyze={handleAnalyze}
-                isScanning={isScanning}
-                scanStep={scanStep}
-                onCancelScan={handleCancelScan}
-                error={extractionError}
-                onRetry={() => handleAnalyze(url, selectedCategory)}
-                onManualEntry={() => setIsManualOpen(true)}
-                totalAmount={totals.total}
-                currency={store.currency}
-                itemCount={totals.itemCount}
-                totalSlots={totals.totalSlots}
-                lastDelta={lastDelta}
-                hasAdvisories={advisories.length > 0}
-                advisoryCount={advisories.length}
-              />
+        {/* Streamlined Layout: Top (Add Part via Link) -> Middle (Components) -> Bottom (Total & Compatibility) */}
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto w-full space-y-8">
+          {/* 1. TOP: Add Part via Link Panel */}
+          <section id="builder-link-input">
+            <LinkIngestPanel
+              url={url}
+              onUrlChange={setUrl}
+              selectedCategory={selectedCategory}
+              onCategoryChange={setSelectedCategory}
+              onAnalyze={handleAnalyze}
+              isScanning={isScanning}
+              scanStep={scanStep}
+              onCancelScan={handleCancelScan}
+              error={extractionError}
+              onRetry={() => handleAnalyze(url, selectedCategory)}
+              onManualEntry={() => setIsManualOpen(true)}
+              itemCount={totals.itemCount}
+            />
+          </section>
 
-              {/* Flow 10: Expandable Compatibility Advisory Panel */}
-              <CompatibilityPanel
-                advisories={advisories}
-                onScrollToSlot={handleScrollToSlot}
-              />
+          {/* 2. MIDDLE: Components List */}
+          <section id="builder-components" className="space-y-4">
+            <div className="flex items-center justify-between pb-2 border-b border-outline/30">
+              <div className="flex items-center gap-2.5">
+                <h2 className="font-semibold text-foreground text-sm tracking-tight">
+                  Components
+                </h2>
+                <span className="font-mono text-xs text-on-surface-variant">
+                  ({totals.itemCount} of {totals.totalSlots} slots configured)
+                </span>
+              </div>
             </div>
 
-            {/* Right Column: Component Slots List */}
-            <div className="lg:col-span-7 xl:col-span-8 space-y-4">
-              <SlotList
-                components={store.components}
-                dynamicSlots={store.dynamicSlots}
-                activeSlotId={store.activeSlotId}
-                scanningSlotId={scanningSlotId}
-                activeCurrency={store.currency}
-                rates={store.rates}
-                affectedSlotIds={affectedSlotIds}
-                onSelectSlot={handleSelectSlot}
-                onEditSlot={(slotId, item) => {
-                  setReviewDraft({
-                    name: item.name,
-                    price: item.originalPrice,
-                    currency: item.originalCurrency,
-                    category: item.category,
-                    imageUrl: item.imageUrl,
-                    sourceDomain: item.sourceDomain,
-                    specs: item.specs,
-                    confidence: item.confidence,
-                    tierUsed: "tier1_direct",
-                  });
-                  store.setActiveSlot(slotId, item.category);
-                  setIsReviewOpen(true);
-                }}
-                onRemoveSlot={(slotId) => {
-                  store.removeComponent(slotId);
-                  showToast("Component removed");
-                }}
-                onAddDynamicSlot={store.addDynamicSlot}
-                onRemoveDynamicSlot={store.removeDynamicSlot}
-              />
-            </div>
-          </div>
+            <SlotList
+              components={store.components}
+              dynamicSlots={store.dynamicSlots}
+              activeSlotId={store.activeSlotId}
+              scanningSlotId={scanningSlotId}
+              activeCurrency={store.currency}
+              rates={store.rates}
+              affectedSlotIds={affectedSlotIds}
+              onSelectSlot={handleSelectSlot}
+              onEditSlot={(slotId, item) => {
+                setReviewDraft({
+                  name: item.name,
+                  price: item.originalPrice,
+                  currency: item.originalCurrency,
+                  category: item.category,
+                  imageUrl: item.imageUrl,
+                  sourceDomain: item.sourceDomain,
+                  specs: item.specs,
+                  confidence: item.confidence,
+                  tierUsed: "tier1_direct",
+                });
+                store.setActiveSlot(slotId, item.category);
+                setIsReviewOpen(true);
+              }}
+              onRemoveSlot={(slotId) => {
+                store.removeComponent(slotId);
+                showToast("Component removed");
+              }}
+              onAddDynamicSlot={store.addDynamicSlot}
+              onRemoveDynamicSlot={store.removeDynamicSlot}
+            />
+          </section>
+
+          {/* 3. BOTTOM: Estimated Total & Compatibility Advisories */}
+          <section id="builder-total-summary" className="space-y-6 pt-2">
+            <TotalSummaryCard
+              totalAmount={totals.total}
+              currency={store.currency}
+              itemCount={totals.itemCount}
+              totalSlots={totals.totalSlots}
+              lastDelta={lastDelta}
+              hasAdvisories={advisories.length > 0}
+              advisoryCount={advisories.length}
+              onExportClick={() => setIsExportOpen(true)}
+              onSaveClick={() => setIsQuickAuthOpen(true)}
+            />
+
+            {/* Flow 10: Expandable Compatibility Advisory Panel */}
+            <CompatibilityPanel
+              advisories={advisories}
+              onScrollToSlot={handleScrollToSlot}
+            />
+          </section>
         </main>
       </div>
 
