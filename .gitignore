@@ -40,6 +40,11 @@ test-results/
 */test-results/
 playwright-report/
 */playwright-report/
+.playwright-mcp/
+*/.playwright-mcp/
+audit/
+*/audit/
+opencode.json
 
 # Logs
 npm-debug.log*

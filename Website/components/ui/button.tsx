@@ -12,7 +12,7 @@ export interface ButtonProps
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "solid", size = "md", children, disabled, ...props }, ref) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-medium rounded-control transition-all duration-150 select-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground/50 disabled:pointer-events-none disabled:opacity-40 active:scale-[0.98]";
+      "group relative overflow-hidden inline-flex items-center justify-center font-medium rounded-control transition-all duration-200 select-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground/50 disabled:pointer-events-none disabled:opacity-40 active:scale-[0.97] hover:scale-[1.015]";
 
     const sizeStyles = {
       sm: "h-8 px-3 text-xs gap-1.5",
@@ -23,9 +23,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variantStyles = {
       solid:
-        "bg-primary text-primary-foreground hover:opacity-90 shadow-md",
+        "bg-primary text-primary-foreground hover:opacity-95 shadow-md hover:shadow-lg",
       glass:
-        "bg-surface text-foreground border border-outline hover:bg-surface-bright/20 shadow-glass",
+        "bg-surface text-foreground border border-outline hover:bg-surface-bright/30 hover:border-foreground/30 shadow-glass",
       ghost:
         "bg-transparent text-on-surface-variant hover:text-foreground hover:bg-surface/50",
       destructive:
@@ -39,10 +39,18 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         className={cn(baseStyles, sizeStyles[size], variantStyles[variant], className)}
         {...props}
       >
-        {children}
+        {/* Specular Light Reflection Sweep for Solid Buttons */}
+        {variant === "solid" && (
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-700 ease-out"
+          />
+        )}
+        <span className="relative z-10 inline-flex items-center justify-center gap-inherit">
+          {children}
+        </span>
       </button>
     );
   }
 );
 Button.displayName = "Button";
-

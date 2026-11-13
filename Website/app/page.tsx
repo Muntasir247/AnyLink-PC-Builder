@@ -14,6 +14,7 @@ import { ExportModal } from "@/components/modals/export-modal";
 import { QuickAuthModal } from "@/components/modals/quick-auth-modal";
 import { GuestSaveNudge } from "@/components/modals/guest-save-nudge";
 import { Toast } from "@/components/ui/toast";
+import { SparkleBurst } from "@/components/ui/sparkle-burst";
 import { useBuildStore, calculateBuildTotals } from "@/lib/store/build-store";
 import { ComponentCategory, ComponentItem } from "@/lib/types/build";
 import { ExtractedProductData } from "@/lib/extraction/types";
@@ -43,6 +44,7 @@ export default function HomePage() {
   const [isQuickAuthOpen, setIsQuickAuthOpen] = React.useState(false);
   const [toastMessage, setToastMessage] = React.useState<string | null>(null);
   const [lastDelta, setLastDelta] = React.useState<{ amount: number; currency: string } | null>(null);
+  const [sparkleTrigger, setSparkleTrigger] = React.useState(0);
 
   React.useEffect(() => {
     async function checkAuth() {
@@ -161,6 +163,7 @@ export default function HomePage() {
 
     store.addComponent(targetSlot, item);
     setUrl("");
+    setSparkleTrigger((prev) => prev + 1);
     showToast(`${item.category.toUpperCase()} added to build`);
   };
 
@@ -377,6 +380,9 @@ export default function HomePage() {
         onAction={handleUndo}
         onClose={() => setToastMessage(null)}
       />
+
+      {/* Interactive Celebration Sparkles on Component Addition */}
+      <SparkleBurst trigger={sparkleTrigger} />
     </div>
   );
 }

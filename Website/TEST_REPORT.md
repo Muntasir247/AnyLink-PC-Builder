@@ -49,17 +49,20 @@ A total of **68 unit and integration tests** across **24 test suites** were exec
 ### 3.3 Next.js Production Build (`npm run build`)
 - **Command:** `npm run build`
 - **Result:** **PASSED (Exit Code: 0)**
-- All 12 routes statically pre-rendered or properly dynamic:
-  - `○ /` (Home Builder Shell) — 15.7 kB
-  - `○ /preview/components` (Design System Tokens) — 5.29 kB
-  - `○ /export/pdf` (Printable A4 Manifest) — 5.99 kB
-  - `○ /login` & `/signup` — 4.7 kB
-  - `○ /my-builds` — 2.48 kB
-  - `ƒ /b/[shareId]` (Public Shared Build Viewport) — 7.73 kB
+- All 13 production routes statically pre-rendered or properly dynamic:
+  - `○ /` (Home Builder Shell & Control Panel) — 16.5 kB
+  - `○ /_not-found` (Custom 404 Route) — 995 B
+  - `○ /login` & `/signup` (Authentication Pages) — 2.24 kB / 2.02 kB
+  - `○ /my-builds` (User & Guest Builds Management) — 2.8 kB
+  - `○ /profile` (User Profile & Account Sync) — 4.99 kB
+  - `○ /export/pdf` (Printable A4 Specification Sheet) — 6.32 kB
+  - `○ /icon.svg` (Brand Concept Icon)
+  - `ƒ /b/[shareId]` (Public Shared Build Viewport) — 5.84 kB
   - `ƒ /api/extract` (Multi-tier Extraction Pipeline)
   - `ƒ /api/rates` (Exchange Rate Service)
-  - `ƒ /api/builds` & `/api/builds/[id]` & `/api/builds/share`
-  - `ƒ /api/auth/callback`
+  - `ƒ /api/builds` & `/api/builds/[id]` & `/api/builds/share` (Build CRUD & Sharing API)
+  - `ƒ /api/auth/callback` (Auth OAuth & Magic Link Callback)
+  *(Note: Internal design token testing page was cleanly retired in commit `6cd3ab1` to ensure strict production-only navigation).*
 
 ---
 

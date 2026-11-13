@@ -64,7 +64,7 @@ npm install
 # 2. Run local development server
 npm run dev
 
-# 3. Run full test suite (59 unit and integration tests across 8 stages)
+# 3. Run full test suite (68 automated unit and integration tests across 24 test suites)
 npm test
 
 # 4. Create production build
@@ -98,3 +98,7 @@ npm run build
   - Full 390px mobile responsiveness with pinned bottom URL bar and compact total chip
   - WCAG 2.1 AAA contrast compliance in dark (19.5:1) and light (15.8:1) modes
   - Accessible reduced motion overrides (`prefers-reduced-motion: reduce`) collapsing animations for sensitive users
+- **Stage 9 (Production Deployment on Vercel & Supabase)**:
+  - Full step-by-step production runbook documented in [`DEPLOYMENT.md`](./DEPLOYMENT.md) covering Supabase schema migrations, RLS policies, OAuth redirects, and Vercel Hobby tier configuration.
+- **Stage 10 (Verification, Testing & Final Audit)**:
+  - Comprehensive verification report documented in [`TEST_REPORT.md`](./TEST_REPORT.md) featuring 68 automated tests (100% pass rate), TypeScript strict mode audit, ESLint compliance, zero secret leaks, and full 14-screen mockup parity audit.

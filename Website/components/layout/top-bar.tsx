@@ -48,7 +48,7 @@ export function TopBar({
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full h-16 border-b border-outline/40 bg-background/80 backdrop-blur-xl transition-colors">
+    <header className="sticky top-0 z-40 w-full h-16 border-b border-outline/40 bg-background/80 backdrop-blur-xl transition-colors select-none">
       <div className="flex h-full items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Left: Brand & Build Name */}
         <div className="flex items-center gap-4 min-w-0">
@@ -56,8 +56,8 @@ export function TopBar({
             href="/"
             className="flex items-center gap-2.5 shrink-0 group focus-visible:outline-none"
           >
-            <AnyLinkIconBadge />
-            <span className="font-semibold tracking-tight text-foreground text-base hidden sm:inline-block">
+            <AnyLinkIconBadge className="group-hover:rotate-6 group-hover:scale-105 transition-all duration-300" />
+            <span className="font-semibold tracking-tight text-foreground text-base hidden sm:inline-block group-hover:text-foreground transition-colors">
               AnyLink
             </span>
           </Link>
@@ -74,16 +74,16 @@ export function TopBar({
                 onBlur={handleBlur}
                 onKeyDown={handleKeyDown}
                 autoFocus
-                className="h-8 rounded-lg bg-surface px-2.5 text-sm font-medium text-foreground border border-outline focus:outline-none"
+                className="h-8 rounded-lg bg-surface px-2.5 text-sm font-medium text-foreground border border-outline focus:outline-none focus:border-foreground/50"
               />
             ) : (
               <button
                 onClick={() => setIsEditing(true)}
                 aria-label="Edit build name"
-                className="group flex items-center gap-1.5 rounded-lg px-2 py-1 text-sm font-medium text-foreground hover:bg-surface/60 transition-colors truncate text-left"
+                className="group flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-sm font-medium text-foreground hover:bg-surface/70 hover:scale-[1.01] transition-all truncate text-left"
               >
                 <span className="truncate">{nameValue}</span>
-                <Edit2 className="h-3 w-3 text-on-surface-muted opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
+                <Edit2 className="h-3 w-3 text-on-surface-muted opacity-0 group-hover:opacity-100 transition-opacity shrink-0 group-hover:scale-110" />
               </button>
             )}
           </div>
@@ -114,9 +114,9 @@ export function TopBar({
               variant="glass"
               size="sm"
               onClick={onExportClick}
-              className="h-9 text-xs"
+              className="h-9 text-xs group"
             >
-              <Share2 className="h-3.5 w-3.5 mr-1.5" />
+              <Share2 className="h-3.5 w-3.5 mr-1.5 group-hover:scale-110 transition-transform" />
               <span>Export</span>
             </Button>
           )}
@@ -140,11 +140,12 @@ export function TopBar({
           <Link
             href={isGuest ? "/login" : "/profile"}
             aria-label={isGuest ? "Sign In" : "User Profile"}
+            className="group"
           >
             <Button
               variant={isGuest ? "glass" : "solid"}
               size="icon"
-              className="rounded-full h-9 w-9"
+              className="rounded-full h-9 w-9 group-hover:scale-110 active:scale-95 transition-transform"
             >
               <User className="h-4 w-4" />
             </Button>

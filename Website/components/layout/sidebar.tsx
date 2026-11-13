@@ -45,13 +45,13 @@ export function Sidebar({ className }: { className?: string }) {
               key={link.href}
               href={link.href}
               className={cn(
-                "flex items-center gap-3 px-3 py-2.5 rounded-control text-sm font-medium transition-all select-none",
+                "group relative flex items-center gap-3 px-3.5 py-2.5 rounded-control text-sm font-medium transition-all duration-200 select-none",
                 link.active
-                  ? "bg-foreground text-background shadow-md"
-                  : "text-on-surface-variant hover:text-foreground hover:bg-surface/50"
+                  ? "bg-foreground text-background shadow-md scale-[1.01]"
+                  : "text-on-surface-variant hover:text-foreground hover:bg-surface/60 hover:translate-x-1"
               )}
             >
-              <Icon className="h-4 w-4 shrink-0" />
+              <Icon className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:scale-110" />
               <span>{link.label}</span>
             </Link>
           );
@@ -60,4 +60,3 @@ export function Sidebar({ className }: { className?: string }) {
     </aside>
   );
 }
-

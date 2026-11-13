@@ -268,10 +268,10 @@ export function ExportModal({
               {/* Option 1: Share Link */}
               <div
                 onClick={() => setSelectedFormat("share-link")}
-                className={`p-3 rounded-control border transition-all cursor-pointer flex items-center justify-between ${
+                className={`p-3 rounded-control border transition-all duration-200 cursor-pointer flex items-center justify-between hover:-translate-y-0.5 hover:shadow-md active:scale-[0.99] ${
                   selectedFormat === "share-link"
                     ? "bg-surface-highest border-foreground shadow-sm"
-                    : "bg-surface/40 hover:bg-surface/70 border-outline"
+                    : "bg-surface/40 hover:bg-surface/70 border-outline hover:border-foreground/30"
                 }`}
               >
                 <div className="flex items-center gap-3 min-w-0">
@@ -299,10 +299,10 @@ export function ExportModal({
               {/* Option 2: PDF Document */}
               <div
                 onClick={() => setSelectedFormat("pdf")}
-                className={`p-3 rounded-control border transition-all cursor-pointer flex items-center justify-between ${
+                className={`p-3 rounded-control border transition-all duration-200 cursor-pointer flex items-center justify-between hover:-translate-y-0.5 hover:shadow-md active:scale-[0.99] ${
                   selectedFormat === "pdf"
                     ? "bg-surface-highest border-foreground shadow-sm"
-                    : "bg-surface/40 hover:bg-surface/70 border-outline"
+                    : "bg-surface/40 hover:bg-surface/70 border-outline hover:border-foreground/30"
                 }`}
               >
                 <div className="flex items-center gap-3 min-w-0">
@@ -322,10 +322,10 @@ export function ExportModal({
               {/* Option 3: Spreadsheet (CSV) */}
               <div
                 onClick={() => setSelectedFormat("csv")}
-                className={`p-3 rounded-control border transition-all cursor-pointer flex items-center justify-between ${
+                className={`p-3 rounded-control border transition-all duration-200 cursor-pointer flex items-center justify-between hover:-translate-y-0.5 hover:shadow-md active:scale-[0.99] ${
                   selectedFormat === "csv"
                     ? "bg-surface-highest border-foreground shadow-sm"
-                    : "bg-surface/40 hover:bg-surface/70 border-outline"
+                    : "bg-surface/40 hover:bg-surface/70 border-outline hover:border-foreground/30"
                 }`}
               >
                 <div className="flex items-center gap-3 min-w-0">
@@ -345,10 +345,10 @@ export function ExportModal({
               {/* Option 4: Image for Social */}
               <div
                 onClick={() => setSelectedFormat("image")}
-                className={`p-3 rounded-control border transition-all cursor-pointer flex items-center justify-between ${
+                className={`p-3 rounded-control border transition-all duration-200 cursor-pointer flex items-center justify-between hover:-translate-y-0.5 hover:shadow-md active:scale-[0.99] ${
                   selectedFormat === "image"
                     ? "bg-surface-highest border-foreground shadow-sm"
-                    : "bg-surface/40 hover:bg-surface/70 border-outline"
+                    : "bg-surface/40 hover:bg-surface/70 border-outline hover:border-foreground/30"
                 }`}
               >
                 <div className="flex items-center gap-3 min-w-0">
@@ -368,10 +368,10 @@ export function ExportModal({
               {/* Option 5: Copy as Text */}
               <div
                 onClick={() => setSelectedFormat("text")}
-                className={`p-3 rounded-control border transition-all cursor-pointer flex items-center justify-between ${
+                className={`p-3 rounded-control border transition-all duration-200 cursor-pointer flex items-center justify-between hover:-translate-y-0.5 hover:shadow-md active:scale-[0.99] ${
                   selectedFormat === "text"
                     ? "bg-surface-highest border-foreground shadow-sm"
-                    : "bg-surface/40 hover:bg-surface/70 border-outline"
+                    : "bg-surface/40 hover:bg-surface/70 border-outline hover:border-foreground/30"
                 }`}
               >
                 <div className="flex items-center gap-3 min-w-0">
