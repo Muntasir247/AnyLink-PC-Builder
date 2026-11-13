@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { LayoutDashboard, FolderGit2 } from "lucide-react";
+import { LayoutDashboard, FolderGit2, User } from "lucide-react";
 
 export function Sidebar({ className }: { className?: string }) {
   const pathname = usePathname();
@@ -21,6 +21,12 @@ export function Sidebar({ className }: { className?: string }) {
       href: "/my-builds",
       icon: FolderGit2,
       active: pathname.startsWith("/my-builds"),
+    },
+    {
+      label: "Profile",
+      href: "/profile",
+      icon: User,
+      active: pathname.startsWith("/profile"),
     },
   ];
 

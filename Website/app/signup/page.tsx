@@ -12,7 +12,7 @@ import {
   signInWithGoogle,
 } from "@/lib/auth/auth-service";
 import { migrateGuestBuild } from "@/lib/builds/build-service";
-import { Eye, EyeOff, ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
+import { Eye, EyeOff, ArrowRight, Cpu, CheckCircle2 } from "lucide-react";
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -71,19 +71,16 @@ export default function SignUpPage() {
 
       <div className="w-full max-w-md relative z-10 space-y-6">
         {/* Brand Header */}
-        <div className="text-center space-y-2">
+        <div className="text-center space-y-1">
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-foreground font-semibold text-xl tracking-tight"
           >
             <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-foreground text-background">
-              <Sparkles className="h-4 w-4" />
+              <Cpu className="h-4 w-4" />
             </div>
             <span>AnyLink</span>
           </Link>
-          <p className="text-xs text-on-surface-variant font-mono uppercase tracking-widest">
-            PC Part Picker Architecture
-          </p>
         </div>
 
         {/* Sign Up Glass Card */}
@@ -102,14 +99,6 @@ export default function SignUpPage() {
             >
               Sign up
             </button>
-          </div>
-
-          {/* Guest Build Migration Assurance Banner */}
-          <div className="p-3 rounded-control bg-surface-highest/50 border border-outline flex items-center gap-2.5">
-            <CheckCircle2 className="h-4 w-4 text-foreground shrink-0" />
-            <span className="text-xs text-on-surface-variant">
-              Your guest build will be automatically saved to your account.
-            </span>
           </div>
 
           {/* Google OAuth Button */}
@@ -155,7 +144,7 @@ export default function SignUpPage() {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Tanvir Ahmed"
+                placeholder="Muntasir Hossain"
               />
             </div>
 
@@ -168,7 +157,7 @@ export default function SignUpPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="name@example.com"
+                placeholder="adormuntasir@gmail.com"
               />
             </div>
 
@@ -211,14 +200,24 @@ export default function SignUpPage() {
           </form>
 
           {/* Continue as Guest Footer */}
-          <div className="pt-2 border-t border-outline/30 text-center">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-1.5 text-xs text-on-surface-variant hover:text-foreground transition-colors group"
-            >
-              <span>Continue as guest</span>
-              <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
-            </Link>
+          <div className="pt-3 border-t border-outline/30 text-center space-y-2">
+            <div>
+              <Link
+                href="/?guest=true"
+                onClick={() => {
+                  if (typeof window !== "undefined") {
+                    sessionStorage.setItem("anylink_guest_mode", "true");
+                  }
+                }}
+                className="inline-flex items-center gap-1.5 text-xs text-on-surface-variant hover:text-foreground transition-colors group"
+              >
+                <span>Continue as guest</span>
+                <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+            </div>
+            <p className="text-[11px] text-on-surface-muted">
+              Your guest build will be automatically saved to your account.
+            </p>
           </div>
         </GlassCard>
       </div>

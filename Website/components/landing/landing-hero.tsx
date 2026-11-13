@@ -47,14 +47,6 @@ export function LandingHero({ onStartAsGuest }: LandingHeroProps) {
 
       {/* Hero Content */}
       <div className="w-full max-w-3xl mx-auto flex flex-col items-center text-center relative z-10 pt-16 space-y-8">
-        {/* Brand Icon Pill */}
-        <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-surface-highest/60 border border-outline shadow-sm">
-          <span className="h-1.5 w-1.5 rounded-full bg-foreground animate-pulse" />
-          <span className="font-mono text-[11px] uppercase tracking-wider text-on-surface-variant font-medium">
-            PC Part Picker Architecture
-          </span>
-        </div>
-
         {/* Headline & Subtitle */}
         <div className="space-y-3 max-w-2xl">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">

@@ -13,7 +13,7 @@ import {
   signInWithGoogle,
 } from "@/lib/auth/auth-service";
 import { migrateGuestBuild } from "@/lib/builds/build-service";
-import { Eye, EyeOff, ArrowRight, Sparkles, Check } from "lucide-react";
+import { Eye, EyeOff, ArrowRight, Cpu, Check } from "lucide-react";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -82,19 +82,16 @@ export default function LoginPage() {
 
       <div className="w-full max-w-md relative z-10 space-y-6">
         {/* Brand Header */}
-        <div className="text-center space-y-2">
+        <div className="text-center space-y-1">
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-foreground font-semibold text-xl tracking-tight"
           >
             <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-foreground text-background">
-              <Sparkles className="h-4 w-4" />
+              <Cpu className="h-4 w-4" />
             </div>
             <span>AnyLink</span>
           </Link>
-          <p className="text-xs text-on-surface-variant font-mono uppercase tracking-widest">
-            PC Part Picker Architecture
-          </p>
         </div>
 
         {/* Auth Glass Card */}
@@ -171,7 +168,7 @@ export default function LoginPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="name@example.com"
+                  placeholder="adormuntasir@gmail.com"
                 />
               </div>
 
@@ -233,7 +230,12 @@ export default function LoginPage() {
           {/* Continue as Guest Footer */}
           <div className="pt-2 border-t border-outline/30 text-center">
             <Link
-              href="/"
+              href="/?guest=true"
+              onClick={() => {
+                if (typeof window !== "undefined") {
+                  sessionStorage.setItem("anylink_guest_mode", "true");
+                }
+              }}
               className="inline-flex items-center gap-1.5 text-xs text-on-surface-variant hover:text-foreground transition-colors group"
             >
               <span>Continue as guest</span>

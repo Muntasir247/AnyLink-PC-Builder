@@ -122,7 +122,7 @@ export function QuickAuthModal({
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Your name"
+            placeholder="Muntasir Hossain"
             className="h-9 text-xs"
           />
           <Input
@@ -130,7 +130,7 @@ export function QuickAuthModal({
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="name@example.com"
+            placeholder="adormuntasir@gmail.com"
             className="h-9 text-xs"
           />
           <Input

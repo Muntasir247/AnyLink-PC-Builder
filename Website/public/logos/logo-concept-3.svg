@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <rect width="512" height="512" fill="#0A0A0A" rx="96"/>
+
+  <!-- Geometric Isogrid Accent Lines -->
+  <line x1="256" y1="80" x2="256" y2="432" stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <line x1="96" y1="256" x2="416" y2="256" stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+  <!-- Monogram "A" & Hyperlink Intersection -->
+  <!-- Left Leg of 'A' with 45-degree PCIe Trace Chamfers -->
+  <path d="M 256 112 L 140 376 L 194 376 L 232 290 L 280 290" fill="none" stroke="#FFFFFF" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Right Leg forming the forward Link Connector Arrow -->
+  <path d="M 256 112 L 372 376 L 318 376 L 292 316" fill="none" stroke="#FFFFFF" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Dynamic Crossbar: Forward Hyperlink Pointer / Link Node -->
+  <path d="M 190 270 L 330 270 M 294 234 L 330 270 L 294 306" fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-linejoin="round"/>
+
+  <!-- Precision Connector Pin Points at Base -->
+  <circle cx="140" cy="376" r="6" fill="#0A0A0A" stroke="#FFFFFF" stroke-width="5"/>
+  <circle cx="372" cy="376" r="6" fill="#0A0A0A" stroke="#FFFFFF" stroke-width="5"/>
+  <circle cx="256" cy="112" r="7" fill="#FFFFFF"/>
+
+  <!-- Speed Trace Accent Lines -->
+  <path d="M 112 376 L 80 376" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 400 376 L 432 376" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="4" stroke-linecap="round"/>
+</svg>

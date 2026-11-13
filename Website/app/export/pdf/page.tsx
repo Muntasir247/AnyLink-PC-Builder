@@ -54,7 +54,7 @@ export default function PrintableA4Page() {
         {/* Top Registration Line */}
         <div className="flex items-center justify-between text-[9px] font-mono uppercase tracking-[0.18em] text-black/40 border-b border-black/10 pb-2 mb-4">
           <div className="flex items-center gap-2">
-            <span>ANYLINK ARCHITECTURE LABS // HARDWARE ENGINEERING REPORT</span>
+            <span>ANYLINK PC BUILDER // HARDWARE SPECIFICATION REPORT</span>
             <span>•</span>
             <span>REF: {docId}</span>
           </div>

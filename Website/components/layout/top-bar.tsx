@@ -138,7 +138,10 @@ export function TopBar({
           <ThemeToggle />
 
           {/* Account Profile / Link */}
-          <Link href="/login" aria-label="Account">
+          <Link
+            href={isGuest ? "/login" : "/profile"}
+            aria-label={isGuest ? "Sign In" : "User Profile"}
+          >
             <Button
               variant={isGuest ? "glass" : "solid"}
               size="icon"

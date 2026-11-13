@@ -48,7 +48,18 @@ export default function HomePage() {
     async function checkAuth() {
       const u = await getCurrentUser();
       setUser(u);
-      if (u || Object.keys(store.components).length > 0) {
+
+      const params = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
+      const isGuestSession =
+        typeof window !== "undefined" &&
+        (sessionStorage.getItem("anylink_guest_mode") === "true" ||
+          params?.get("guest") === "true" ||
+          params?.get("builder") === "true");
+
+      if (u || Object.keys(store.components).length > 0 || isGuestSession) {
+        if (isGuestSession && typeof window !== "undefined") {
+          sessionStorage.setItem("anylink_guest_mode", "true");
+        }
         setHasStarted(true);
       }
     }
@@ -184,7 +195,16 @@ export default function HomePage() {
   const affectedSlotIds = advisories.flatMap((a) => a.affectedSlotIds);
 
   if (!hasStarted) {
-    return <LandingHero onStartAsGuest={() => setHasStarted(true)} />;
+    return (
+      <LandingHero
+        onStartAsGuest={() => {
+          if (typeof window !== "undefined") {
+            sessionStorage.setItem("anylink_guest_mode", "true");
+          }
+          setHasStarted(true);
+        }}
+      />
+    );
   }
 
   return (
