@@ -84,13 +84,13 @@ export function ReviewModal({
         <div className="grid grid-cols-1 sm:grid-cols-12 gap-5 items-start">
           {/* Image & Source Badge */}
           <div className="sm:col-span-4 flex flex-col items-center gap-2">
-            <div className="w-full aspect-square rounded-2xl bg-surface-highest/40 border border-outline flex items-center justify-center overflow-hidden p-4 relative group">
+            <div className="w-full aspect-square rounded-2xl bg-surface-highest/40 border border-outline flex items-center justify-center overflow-hidden p-2 relative group shadow-sm">
               {draft.imageUrl ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={draft.imageUrl}
                   alt={name}
-                  className="max-h-full max-w-full object-contain"
+                  className="w-full h-full max-h-full max-w-full object-contain drop-shadow-sm select-none"
                 />
               ) : (
                 <Sparkles className="h-10 w-10 text-on-surface-muted" />

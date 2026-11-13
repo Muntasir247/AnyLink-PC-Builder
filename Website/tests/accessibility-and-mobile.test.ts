@@ -92,5 +92,28 @@ describe("Stage 8: Mobile, Polish & Accessibility", () => {
       }
     });
   });
+
+  describe("Filled Slot Card Image Dimensions & Overflow Safeguards", () => {
+    it("should size the component picture significantly larger than 48px and support responsive scaling up to lg:w-40", () => {
+      const slotCardPath = path.resolve(process.cwd(), "components/builder/slot-card-filled.tsx");
+      const code = fs.readFileSync(slotCardPath, "utf-8");
+
+      // Verify enlarged responsive dimensions (96px on mobile up to 160px on desktop)
+      assert.ok(code.includes("w-24 h-24"), "Must have at least w-24 h-24 (96px) on mobile");
+      assert.ok(code.includes("sm:w-32 sm:h-32"), "Must scale to at least sm:w-32 (128px) on tablet");
+      assert.ok(code.includes("lg:w-40 lg:h-40"), "Must scale to lg:w-40 (160px) on desktop for maximized picture presentation");
+
+      // Verify overflow prevention safeguards
+      assert.ok(code.includes("overflow-hidden"), "Thumbnail container must clip and prevent overflow");
+      assert.ok(code.includes("shrink-0"), "Thumbnail container must be shrink-0 so text details never squeeze it");
+      assert.ok(code.includes("object-contain"), "Image must be object-contain so aspect ratio is preserved without clipping");
+      assert.ok(code.includes("min-w-0"), "Details block must have min-w-0 to prevent horizontal flex overflow");
+      assert.ok(code.includes("break-words"), "Product title must have break-words to handle long model numbers");
+
+      // Verify zoom lightbox capability
+      assert.ok(code.includes("ZoomIn"), "Must offer zoom affordance");
+      assert.ok(code.includes("cursor-zoom-in"), "Must show zoom-in cursor when picture is present");
+    });
+  });
 });
 

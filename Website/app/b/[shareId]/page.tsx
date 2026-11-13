@@ -209,44 +209,64 @@ export default function SharedBuildPage() {
               return (
                 <GlassCard
                   key={item.id}
-                  className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-outline"
+                  className="p-3.5 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3.5 sm:gap-4 border border-outline group"
                 >
-                  <div className="space-y-1.5 flex-1 min-w-0">
-                    <div className="flex items-center gap-2">
-                      <span className="font-mono text-[10px] uppercase px-2 py-0.5 rounded-full bg-surface-highest/60 border border-outline text-on-surface-variant">
-                        {item.category}
-                      </span>
-                      <span className="text-xs text-on-surface-muted truncate">
-                        via {item.sourceDomain}
-                      </span>
+                  <div className="flex items-start sm:items-center gap-3.5 sm:gap-4 min-w-0 flex-1">
+                    {/* Component Thumbnail */}
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-2xl bg-surface-highest/60 border border-outline flex items-center justify-center shrink-0 p-1.5 sm:p-2 overflow-hidden relative shadow-sm group-hover:border-foreground/40 transition-colors">
+                      {item.imageUrl ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={item.imageUrl}
+                          alt={item.name}
+                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-sm select-none"
+                        />
+                      ) : (
+                        <div className="flex flex-col items-center justify-center gap-1 text-on-surface-variant p-2 text-center">
+                          <span className="font-mono text-[10px] uppercase tracking-wider">
+                            {item.category}
+                          </span>
+                        </div>
+                      )}
                     </div>
 
-                    <h3 className="font-medium text-sm text-foreground truncate">
-                      {item.name}
-                    </h3>
+                    <div className="space-y-1.5 flex-1 min-w-0">
+                      <div className="flex items-center gap-2">
+                        <span className="font-mono text-[10px] uppercase px-2 py-0.5 rounded-full bg-surface-highest/60 border border-outline text-on-surface-variant">
+                          {item.category}
+                        </span>
+                        <span className="text-xs text-on-surface-muted truncate">
+                          via {item.sourceDomain}
+                        </span>
+                      </div>
 
-                    {/* Specs badges */}
-                    <div className="flex flex-wrap gap-1.5 pt-0.5">
-                      {item.specs.socket && (
-                        <span className="px-2 py-0.5 rounded-full bg-surface-highest/40 font-mono text-[10px] text-on-surface-variant">
-                          Socket {item.specs.socket}
-                        </span>
-                      )}
-                      {item.specs.tdp && (
-                        <span className="px-2 py-0.5 rounded-full bg-surface-highest/40 font-mono text-[10px] text-on-surface-variant">
-                          {item.specs.tdp}W TDP
-                        </span>
-                      )}
-                      {item.specs.capacity && (
-                        <span className="px-2 py-0.5 rounded-full bg-surface-highest/40 font-mono text-[10px] text-on-surface-variant">
-                          {item.specs.capacity}
-                        </span>
-                      )}
-                      {item.specs.memoryType && (
-                        <span className="px-2 py-0.5 rounded-full bg-surface-highest/40 font-mono text-[10px] text-on-surface-variant">
-                          {item.specs.memoryType}
-                        </span>
-                      )}
+                      <h3 className="font-medium text-sm text-foreground truncate">
+                        {item.name}
+                      </h3>
+
+                      {/* Specs badges */}
+                      <div className="flex flex-wrap gap-1.5 pt-0.5">
+                        {item.specs.socket && (
+                          <span className="px-2 py-0.5 rounded-full bg-surface-highest/40 font-mono text-[10px] text-on-surface-variant">
+                            Socket {item.specs.socket}
+                          </span>
+                        )}
+                        {item.specs.tdp && (
+                          <span className="px-2 py-0.5 rounded-full bg-surface-highest/40 font-mono text-[10px] text-on-surface-variant">
+                            {item.specs.tdp}W TDP
+                          </span>
+                        )}
+                        {item.specs.capacity && (
+                          <span className="px-2 py-0.5 rounded-full bg-surface-highest/40 font-mono text-[10px] text-on-surface-variant">
+                            {item.specs.capacity}
+                          </span>
+                        )}
+                        {item.specs.memoryType && (
+                          <span className="px-2 py-0.5 rounded-full bg-surface-highest/40 font-mono text-[10px] text-on-surface-variant">
+                            {item.specs.memoryType}
+                          </span>
+                        )}
+                      </div>
                     </div>
                   </div>
 
