@@ -1,7 +1,24 @@
 # AnyLink PC Builder
 
+[![Next.js 15](https://img.shields.io/badge/Next.js-15.1-black?style=flat&logo=next.js)](https://nextjs.org/)
+[![React 19](https://img.shields.io/badge/React-19.0-blue?style=flat&logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?style=flat&logo=tailwindcss)](https://tailwindcss.com/)
+[![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ecf8e?style=flat&logo=supabase)](https://supabase.com/)
+[![Gemini 2.5 Flash](https://img.shields.io/badge/Google_Gemini-2.5_Flash-orange?style=flat&logo=google)](https://aistudio.google.com/)
+[![Tests](https://img.shields.io/badge/Tests-68%2F68%20Passed-brightgreen?style=flat)](TEST_REPORT.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 > **URL-First PC Part Picker & Compatibility Engine**  
 > Build a PC by pasting product links from any online hardware retailer (Star Tech, Tech Land, Ryans Computers, PC Builder Store, Amazon, Newegg). No database search bar, no catalog lock-in — automated on-demand structured extraction with real-time hardware compatibility checking and multi-currency conversion.
+
+---
+
+## 🎬 Live Demo & Visual Walkthrough
+
+![AnyLink Walkthrough Preview](anylink-demo.gif)
+
+> 📹 **High-Definition Video**: Watch or download the full 720p 30fps screen record demo showcase at [`anylink-demo.mp4`](anylink-demo.mp4).
 
 ---
 
@@ -37,6 +54,8 @@ AnyLink PC Builder/
 │   ├── TEST_REPORT.md     # Full Stage 10 audit and 68-test verification matrix
 │   └── package.json       # Project dependencies and npm scripts
 ├── Demo_Design/           # 14 UI design reference screens and HTML mockups
+├── anylink-demo.gif       # High-contrast animated walkthrough demo
+├── anylink-demo.mp4       # 720p HD universal H.264 screen recording video
 ├── design&Flow.md         # Architecture and user flow specifications
 ├── initial_plan.md        # Initial product roadmap and requirements
 ├── plan.md                # 10-stage execution plan and design rules

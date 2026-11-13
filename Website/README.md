@@ -1,6 +1,23 @@
 # AnyLink PC Builder
 
+[![Next.js 15](https://img.shields.io/badge/Next.js-15.1-black?style=flat&logo=next.js)](https://nextjs.org/)
+[![React 19](https://img.shields.io/badge/React-19.0-blue?style=flat&logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?style=flat&logo=tailwindcss)](https://tailwindcss.com/)
+[![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ecf8e?style=flat&logo=supabase)](https://supabase.com/)
+[![Gemini 2.5 Flash](https://img.shields.io/badge/Google_Gemini-2.5_Flash-orange?style=flat&logo=google)](https://aistudio.google.com/)
+[![Tests](https://img.shields.io/badge/Tests-68%2F68%20Passed-brightgreen?style=flat)](TEST_REPORT.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 > A custom PC building web application where components are added **strictly** by pasting product URLs from any store in Bangladesh (Star Tech, Tech Land, Ryans Computers, PC Builder Store) or internationally (Amazon, Newegg). There is no database search bar — the application fetches retail pages on demand, extracts structured specs and pricing via heuristics and AI, and lets users verify every part before committing it to the build.
+
+---
+
+## 🎬 Live Demo & Visual Walkthrough
+
+![AnyLink Walkthrough Preview](/anylink-demo.gif)
+
+> 📹 **High-Definition Video**: Watch or download the full 720p 30fps screen record demo showcase at [`public/anylink-demo.mp4`](public/anylink-demo.mp4).
 
 ---
 
