@@ -108,7 +108,7 @@ export function ReviewModal({
           <div className="sm:col-span-8 space-y-4">
             {/* Component Title */}
             <div className="space-y-1.5">
-              <label className="text-[10px] font-mono uppercase tracking-wider text-on-surface-variant flex items-center gap-1">
+              <label className="text-xs font-mono uppercase tracking-wider text-on-surface-variant font-semibold flex items-center gap-1">
                 <span>Product Name</span>
                 <Edit2 className="h-2.5 w-2.5 text-on-surface-muted" />
               </label>
@@ -123,7 +123,7 @@ export function ReviewModal({
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {/* Category Dropdown */}
               <div className="space-y-1.5">
-                <label className="text-[10px] font-mono uppercase tracking-wider text-on-surface-variant">
+                <label className="text-xs font-mono uppercase tracking-wider text-on-surface-variant font-semibold">
                   Category
                 </label>
                 <Select
@@ -140,7 +140,7 @@ export function ReviewModal({
 
               {/* Price & Currency */}
               <div className="space-y-1.5">
-                <label className="text-[10px] font-mono uppercase tracking-wider text-on-surface-variant">
+                <label className="text-xs font-mono uppercase tracking-wider text-on-surface-variant font-semibold">
                   Detected Price
                 </label>
                 <div className="flex items-center gap-2">

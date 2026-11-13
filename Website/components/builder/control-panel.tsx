@@ -103,7 +103,7 @@ export function LinkIngestPanel({
         {/* Category Selector */}
         {!isScanning && !error && (
           <div className="flex items-center gap-2 shrink-0">
-            <span className="text-[10px] font-mono uppercase tracking-wider text-on-surface-muted">
+            <span className="text-xs font-mono uppercase tracking-wider text-on-surface-variant font-semibold">
               Slot:
             </span>
             <Select
@@ -262,7 +262,7 @@ export function LinkIngestPanel({
                   ? "Paste any product link (Star Tech, Tech Land, Ryans, Amazon, Newegg)..."
                   : `Paste a ${selectedCategory.toUpperCase()} product link...`
               }
-              className="h-11 w-full rounded-control bg-surface-highest/40 pl-10 pr-28 font-mono text-xs text-foreground placeholder:text-on-surface-muted border border-outline focus:outline-none focus:border-foreground/50 transition-all"
+              className="h-11 w-full rounded-control bg-surface-highest/40 pl-10 pr-28 font-mono text-xs text-foreground placeholder:text-on-surface-variant/70 border border-outline focus:outline-none focus:border-foreground/50 transition-all"
             />
 
             {/* Domain Recognition Badge */}
@@ -296,12 +296,12 @@ export function LinkIngestPanel({
             </Button>
           </div>
 
-          <div className="flex items-center justify-between text-[11px] font-mono text-on-surface-muted pt-0.5">
+          <div className="flex items-center justify-between text-xs font-mono text-on-surface-variant font-medium pt-0.5">
             <span>Supported: Star Tech · Tech Land · Ryans · Amazon · Newegg</span>
             <button
               type="button"
               onClick={onManualEntry}
-              className="hover:text-foreground underline underline-offset-4"
+              className="text-foreground hover:underline underline-offset-4 font-semibold"
             >
               Enter manually
             </button>
@@ -341,7 +341,7 @@ export function TotalSummaryCard({
         {/* Price & Delta */}
         <div className="space-y-1">
           <div className="flex items-center gap-2">
-            <span className="text-[10px] font-mono uppercase tracking-wider text-on-surface-muted">
+            <span className="text-xs font-mono uppercase tracking-wider text-on-surface-variant font-semibold">
               Estimated Total
             </span>
             {lastDelta && lastDelta.amount > 0 && (
@@ -385,22 +385,22 @@ export function TotalSummaryCard({
 
       {/* Progress & Status Badges */}
       <div className="flex items-center justify-between pt-3 border-t border-outline/30 text-xs">
-        <span className="font-mono text-on-surface-variant">
+        <span className="font-mono text-on-surface-variant font-medium">
           {itemCount} of {totalSlots} components added
         </span>
 
         {hasAdvisories ? (
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-highest border border-outline font-mono text-[10px] uppercase text-foreground">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-highest border border-outline font-mono text-[11px] uppercase font-semibold text-foreground">
             <AlertTriangle className="h-3 w-3" />
             <span>{advisoryCount} to check</span>
           </span>
         ) : itemCount > 0 ? (
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-highest/60 border border-outline font-mono text-[10px] uppercase text-foreground">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-highest/80 border border-outline font-mono text-[11px] uppercase font-semibold text-foreground">
             <CheckCircle2 className="h-3 w-3" />
             <span>Looking good</span>
           </span>
         ) : (
-          <span className="font-mono text-[10px] text-on-surface-muted uppercase">
+          <span className="font-mono text-xs text-on-surface-variant uppercase font-medium">
             No components added yet
           </span>
         )}

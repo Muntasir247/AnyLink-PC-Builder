@@ -6,38 +6,38 @@
   --background: #f2f2f3;
   --foreground: #0e0e0e;
 
-  --surface: rgba(255, 255, 255, 0.55);
+  --surface: rgba(255, 255, 255, 0.85);
   --surface-dim: #e4e4e6;
   --surface-bright: #ffffff;
   --surface-container-lowest: #ffffff;
   --surface-container-low: #f8f8f9;
   --surface-container: #f0f0f2;
   --surface-container-high: #e7e7ea;
-  --surface-container-highest: #dedee2;
+  --surface-container-highest: #dbdbe0;
 
-  --on-surface: rgba(0, 0, 0, 0.92);
-  --on-surface-variant: rgba(0, 0, 0, 0.60);
-  --on-surface-muted: rgba(0, 0, 0, 0.40);
+  --on-surface: #0a0a0c;
+  --on-surface-variant: #374151;
+  --on-surface-muted: #52525b;
 
-  --outline: rgba(0, 0, 0, 0.12);
-  --outline-variant: rgba(0, 0, 0, 0.06);
+  --outline: rgba(0, 0, 0, 0.16);
+  --outline-variant: rgba(0, 0, 0, 0.10);
 
   --primary: #050505;
   --on-primary: #ffffff;
 
-  --glass-fill: rgba(255, 255, 255, 0.55);
-  --glass-border: rgba(0, 0, 0, 0.08);
-  --glass-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.80);
+  --glass-fill: rgba(255, 255, 255, 0.82);
+  --glass-border: rgba(0, 0, 0, 0.12);
+  --glass-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.95);
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
 
-  --orb-opacity: 0.18;
+  --orb-opacity: 0.12;
 }
 
 .dark {
   --background: #050505;
   --foreground: #ffffff;
 
-  --surface: rgba(255, 255, 255, 0.05);
+  --surface: rgba(255, 255, 255, 0.06);
   --surface-dim: #0a0a0a;
   --surface-bright: #1f1f1f;
   --surface-container-lowest: #0e0e0e;
@@ -46,19 +46,19 @@
   --surface-container-high: #242424;
   --surface-container-highest: #2e2e2e;
 
-  --on-surface: rgba(255, 255, 255, 0.95);
-  --on-surface-variant: rgba(255, 255, 255, 0.60);
-  --on-surface-muted: rgba(255, 255, 255, 0.40);
+  --on-surface: rgba(255, 255, 255, 0.98);
+  --on-surface-variant: rgba(255, 255, 255, 0.82);
+  --on-surface-muted: rgba(255, 255, 255, 0.68);
 
-  --outline: rgba(255, 255, 255, 0.15);
-  --outline-variant: rgba(255, 255, 255, 0.08);
+  --outline: rgba(255, 255, 255, 0.18);
+  --outline-variant: rgba(255, 255, 255, 0.10);
 
   --primary: #ffffff;
   --on-primary: #050505;
 
-  --glass-fill: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.10);
-  --glass-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+  --glass-fill: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.16);
   --glass-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
 
   --orb-opacity: 0.06;

@@ -50,10 +50,10 @@ export function CompatibilityPanel({
               className="p-3 rounded-control bg-surface/50 border border-outline/70 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs"
             >
               <div className="space-y-0.5">
-                <div className="font-medium text-foreground tracking-tight">
+                <div className="font-semibold text-sm text-foreground tracking-tight">
                   {advisory.title}
                 </div>
-                <p className="text-on-surface-variant text-[11px] leading-relaxed">
+                <p className="text-on-surface-variant text-xs leading-relaxed font-normal">
                   {advisory.message}
                 </p>
               </div>

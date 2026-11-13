@@ -211,21 +211,21 @@ export function ExportModal({
         <div className="space-y-6">
           {/* Build Name Inline Input */}
           <div className="space-y-1">
-            <label className="text-[10px] font-mono uppercase tracking-wider text-on-surface-variant">
-              Build Designation
+            <label className="text-xs font-mono uppercase tracking-wider text-on-surface-variant font-semibold">
+              Build Name
             </label>
             <Input
               value={buildName}
               onChange={(e) => onBuildNameChange(e.target.value)}
-              placeholder="e.g. Workstation AM5"
+              placeholder="e.g. Gaming Rig AM5"
             />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-start">
             {/* Left: Live Document Glass Preview */}
             <div className="md:col-span-5 rounded-2xl bg-surface-highest/40 border border-outline p-4 space-y-3 font-mono text-xs">
-              <div className="flex items-center justify-between text-[10px] text-on-surface-muted border-b border-outline/30 pb-2">
-                <span>ANYLINK // MANIFEST</span>
+              <div className="flex items-center justify-between text-xs text-on-surface-variant font-semibold border-b border-outline/30 pb-2">
+                <span>ANYLINK BUILD SUMMARY</span>
                 <span>{currency}</span>
               </div>
 
@@ -254,14 +254,14 @@ export function ExportModal({
 
               {/* Preview Footer */}
               <div className="pt-2 border-t border-outline/30 flex items-center justify-between font-semibold">
-                <span className="text-[10px] uppercase text-on-surface-muted">Estimated Total</span>
+                <span className="text-xs uppercase text-on-surface-variant font-semibold">Estimated Total</span>
                 <span className="text-foreground">{formatCurrency(totals.total, currency)}</span>
               </div>
             </div>
 
             {/* Right: 5 Export Output Destinations */}
             <div className="md:col-span-7 space-y-2">
-              <span className="text-[10px] font-mono uppercase tracking-wider text-on-surface-variant block mb-1">
+              <span className="text-xs font-mono uppercase tracking-wider text-on-surface-variant font-semibold block mb-1">
                 Select Format
               </span>
 

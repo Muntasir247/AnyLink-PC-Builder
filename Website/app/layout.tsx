@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   title: "AnyLink — PC Part Picker From Any Store",
   description:
     "Build your custom PC by simply pasting product links from any store. AI extracts specs, checks compatibility, and tracks total cost in real-time.",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

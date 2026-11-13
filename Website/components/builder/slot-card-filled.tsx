@@ -55,57 +55,57 @@ export function SlotCardFilled({
           )}
         </div>
 
-        <div className="space-y-1 min-w-0 flex-1">
+        <div className="space-y-1.5 min-w-0 flex-1">
           <div className="flex items-center gap-2">
-            <span className="font-mono text-[10px] uppercase tracking-wider text-on-surface-muted">
+            <span className="font-mono text-xs uppercase tracking-wider text-on-surface-variant font-semibold">
               {item.category}
             </span>
-            <span className="text-[10px] text-on-surface-muted">•</span>
-            <span className="font-mono text-[10px] text-on-surface-muted flex items-center gap-1 truncate">
-              <Globe className="h-2.5 w-2.5 text-foreground" />
+            <span className="text-xs text-on-surface-muted font-bold">•</span>
+            <span className="font-mono text-xs text-on-surface-variant font-medium flex items-center gap-1.5 truncate">
+              <Globe className="h-3 w-3 text-foreground" />
               <span>{item.sourceDomain}</span>
             </span>
             {hasWarning && (
-              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-foreground text-background font-mono text-[9px] uppercase font-bold">
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-foreground text-background font-mono text-[10px] uppercase font-bold">
                 <AlertTriangle className="h-2.5 w-2.5" />
                 <span>Advisory</span>
               </span>
             )}
           </div>
 
-          <h3 className="font-medium text-sm sm:text-base text-foreground tracking-tight line-clamp-1">
+          <h3 className="font-semibold text-sm sm:text-base text-foreground tracking-tight line-clamp-1">
             {item.name}
           </h3>
 
           {/* Specs Chips */}
           <div className="flex flex-wrap gap-1.5 pt-0.5">
             {item.specs.socket && (
-              <span className="px-2 py-0.5 rounded-full bg-surface-highest/40 font-mono text-[10px] text-on-surface-variant border border-outline/30">
+              <span className="px-2 py-0.5 rounded-md bg-surface-highest/80 font-mono text-[11px] text-foreground font-medium border border-outline/50">
                 Socket {item.specs.socket}
               </span>
             )}
             {item.specs.tdp && (
-              <span className="px-2 py-0.5 rounded-full bg-surface-highest/40 font-mono text-[10px] text-on-surface-variant border border-outline/30">
+              <span className="px-2 py-0.5 rounded-md bg-surface-highest/80 font-mono text-[11px] text-foreground font-medium border border-outline/50">
                 {item.specs.tdp}W TDP
               </span>
             )}
             {item.specs.capacity && (
-              <span className="px-2 py-0.5 rounded-full bg-surface-highest/40 font-mono text-[10px] text-on-surface-variant border border-outline/30">
+              <span className="px-2 py-0.5 rounded-md bg-surface-highest/80 font-mono text-[11px] text-foreground font-medium border border-outline/50">
                 {item.specs.capacity}
               </span>
             )}
             {item.specs.memoryType && (
-              <span className="px-2 py-0.5 rounded-full bg-surface-highest/40 font-mono text-[10px] text-on-surface-variant border border-outline/30">
+              <span className="px-2 py-0.5 rounded-md bg-surface-highest/80 font-mono text-[11px] text-foreground font-medium border border-outline/50">
                 {item.specs.memoryType}
               </span>
             )}
             {item.specs.lengthMm && (
-              <span className="px-2 py-0.5 rounded-full bg-surface-highest/40 font-mono text-[10px] text-on-surface-variant border border-outline/30">
+              <span className="px-2 py-0.5 rounded-md bg-surface-highest/80 font-mono text-[11px] text-foreground font-medium border border-outline/50">
                 {item.specs.lengthMm} mm
               </span>
             )}
             {item.specs.psuWattage && (
-              <span className="px-2 py-0.5 rounded-full bg-surface-highest/40 font-mono text-[10px] text-on-surface-variant border border-outline/30">
+              <span className="px-2 py-0.5 rounded-md bg-surface-highest/80 font-mono text-[11px] text-foreground font-medium border border-outline/50">
                 {item.specs.psuWattage}W
               </span>
             )}

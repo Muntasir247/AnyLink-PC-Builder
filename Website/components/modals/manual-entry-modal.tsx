@@ -91,7 +91,7 @@ export function ManualEntryModal({
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Product Title */}
         <div className="space-y-1.5">
-          <label className="text-[10px] font-mono uppercase tracking-wider text-on-surface-variant">
+          <label className="text-xs font-mono uppercase tracking-wider text-on-surface-variant font-semibold">
             Component Name *
           </label>
           <Input
@@ -105,7 +105,7 @@ export function ManualEntryModal({
         {/* Category & Pricing */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div className="space-y-1.5">
-            <label className="text-[10px] font-mono uppercase tracking-wider text-on-surface-variant">
+            <label className="text-xs font-mono uppercase tracking-wider text-on-surface-variant font-semibold">
               Category
             </label>
             <Select
@@ -121,7 +121,7 @@ export function ManualEntryModal({
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-[10px] font-mono uppercase tracking-wider text-on-surface-variant">
+            <label className="text-xs font-mono uppercase tracking-wider text-on-surface-variant font-semibold">
               Price & Currency
             </label>
             <div className="flex items-center gap-2">
@@ -154,7 +154,7 @@ export function ManualEntryModal({
 
         {/* Store URL */}
         <div className="space-y-1.5">
-          <label className="text-[10px] font-mono uppercase tracking-wider text-on-surface-variant">
+          <label className="text-xs font-mono uppercase tracking-wider text-on-surface-variant font-semibold">
             Product URL (Optional)
           </label>
           <Input
@@ -167,7 +167,7 @@ export function ManualEntryModal({
 
         {/* Optional Specs Grid */}
         <div className="pt-2 border-t border-outline/30 space-y-2">
-          <span className="text-[10px] font-mono uppercase tracking-wider text-on-surface-variant block">
+          <span className="text-xs font-mono uppercase tracking-wider text-on-surface-variant font-semibold block">
             Technical Constraints (Optional)
           </span>
 

@@ -14,8 +14,8 @@ import {
 } from "@/lib/builds/build-service";
 import { useBuildStore, calculateBuildTotals, calculateEstimatedWattage } from "@/lib/store/build-store";
 import { formatCurrency, convertPrice } from "@/lib/currency/converter";
+import { AnyLinkIconBadge } from "@/components/ui/logo";
 import {
-  Sparkles,
   Copy,
   ExternalLink,
   Zap,
@@ -105,11 +105,9 @@ export default function SharedBuildPage() {
         <div className="flex h-full items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link
             href="/"
-            className="flex items-center gap-2.5 font-semibold text-foreground"
+            className="flex items-center gap-2.5 font-semibold text-foreground group"
           >
-            <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-foreground text-background shadow-md">
-              <Sparkles className="h-4 w-4" />
-            </div>
+            <AnyLinkIconBadge />
             <span>AnyLink</span>
           </Link>
 

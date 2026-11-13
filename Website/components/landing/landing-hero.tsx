@@ -5,7 +5,8 @@ import Link from "next/link";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
-import { ArrowRight, Link2, Sparkles, Cpu } from "lucide-react";
+import { AnyLinkIconBadge } from "@/components/ui/logo";
+import { ArrowRight, Link2, Sparkles } from "lucide-react";
 
 export interface LandingHeroProps {
   onStartAsGuest: () => void;
@@ -35,9 +36,7 @@ export function LandingHero({ onStartAsGuest }: LandingHeroProps) {
       {/* Top Bar */}
       <header className="fixed top-0 left-0 right-0 z-40 h-16 border-b border-outline/30 bg-background/60 backdrop-blur-xl px-6 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
-          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-foreground text-background">
-            <Cpu className="h-4 w-4" />
-          </div>
+          <AnyLinkIconBadge />
           <span className="font-semibold tracking-tight text-foreground text-base">
             AnyLink
           </span>

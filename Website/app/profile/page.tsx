@@ -17,7 +17,7 @@ import {
   FolderGit2,
   LogOut,
   ArrowRight,
-  Cpu,
+  Loader2,
   Layers,
 } from "lucide-react";
 
@@ -57,7 +57,7 @@ export default function ProfilePage() {
           <Sidebar />
           <main className="flex-1 p-6 md:p-10 max-w-4xl mx-auto w-full flex items-center justify-center">
             <div className="flex items-center gap-2.5 text-on-surface-muted text-sm font-mono">
-              <Cpu className="h-4 w-4 animate-spin text-foreground" />
+              <Loader2 className="h-4 w-4 animate-spin text-foreground" />
               <span>Loading account profile...</span>
             </div>
           </main>
@@ -236,3 +236,4 @@ export default function ProfilePage() {
     </div>
   );
 }
+

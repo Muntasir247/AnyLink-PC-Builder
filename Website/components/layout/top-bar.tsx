@@ -5,7 +5,8 @@ import Link from "next/link";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Select } from "@/components/ui/select";
-import { Edit2, User, Cpu, Share2 } from "lucide-react";
+import { AnyLinkIconBadge } from "@/components/ui/logo";
+import { Edit2, User, Share2 } from "lucide-react";
 
 export interface TopBarProps {
   buildName?: string;
@@ -55,9 +56,7 @@ export function TopBar({
             href="/"
             className="flex items-center gap-2.5 shrink-0 group focus-visible:outline-none"
           >
-            <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-foreground text-background shadow-md">
-              <Cpu className="h-4 w-4" />
-            </div>
+            <AnyLinkIconBadge />
             <span className="font-semibold tracking-tight text-foreground text-base hidden sm:inline-block">
               AnyLink
             </span>

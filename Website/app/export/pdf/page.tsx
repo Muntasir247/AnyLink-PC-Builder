@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { useBuildStore, calculateBuildTotals, calculateEstimatedWattage } from "@/lib/store/build-store";
 import { formatCurrency, convertPrice } from "@/lib/currency/converter";
+import { AnyLinkMark } from "@/components/ui/logo";
 import { Printer, ArrowLeft, ExternalLink } from "lucide-react";
 
 export default function PrintableA4Page() {
@@ -18,7 +19,6 @@ export default function PrintableA4Page() {
   const totals = calculateBuildTotals(store.components, currency, store.rates, store.dynamicSlots.length);
   const wattage = calculateEstimatedWattage(store.components);
 
-  const docId = `BLD-${Date.now().toString(36).toUpperCase().substring(0, 8)}`;
   const currentDate = new Date().toLocaleDateString("en-US", {
     month: "long",
     day: "numeric",
@@ -49,79 +49,67 @@ export default function PrintableA4Page() {
       {/* A4 Printable Paper Container */}
       <article
         id="a4-manifest"
-        className="w-full max-w-[820px] bg-white text-black p-8 sm:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.12)] print:shadow-none print:p-0 print:max-w-none font-sans select-text relative"
+        className="w-full max-w-[820px] bg-white text-black p-8 sm:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.12)] print:shadow-none print:p-0 print:max-w-none font-sans select-text relative rounded-xl print:rounded-none"
       >
-        {/* Top Registration Line */}
-        <div className="flex items-center justify-between text-[9px] font-mono uppercase tracking-[0.18em] text-black/40 border-b border-black/10 pb-2 mb-4">
-          <div className="flex items-center gap-2">
-            <span>ANYLINK PC BUILDER // HARDWARE SPECIFICATION REPORT</span>
-            <span>•</span>
-            <span>REF: {docId}</span>
-          </div>
-          <div className="font-mono">PAGE 01 / 01</div>
-        </div>
-
         {/* Header Block */}
         <header className="pb-6 border-b border-black/10">
-          <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
-            <div className="space-y-1">
-              <div className="flex items-center gap-2">
-                <span className="w-4 h-4 bg-black inline-block" />
-                <span className="font-mono text-xl font-bold tracking-tight text-black leading-none">
-                  ANYLINK
-                </span>
-                <span className="font-mono text-xs tracking-widest text-black/50 ml-1">
-                  SYSTEM MANIFEST
-                </span>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-black text-white flex items-center justify-center shadow-sm">
+                <AnyLinkMark size={22} className="text-white" />
               </div>
-              <h1 className="font-mono text-xs uppercase text-black/70 tracking-widest pt-1">
-                SYSTEM SPECIFICATION MANIFEST & BILL OF MATERIALS
+              <div>
+                <div className="font-bold text-xl tracking-tight text-black leading-none">
+                  AnyLink
+                </div>
+                <div className="text-xs text-black/60 pt-1 font-medium">
+                  PC Build Specification
+                </div>
+              </div>
+            </div>
+
+            <div className="sm:text-right font-mono text-xs text-black/70 space-y-1">
+              <div>Date: <span className="text-black font-semibold">{currentDate}</span></div>
+              <div>Currency: <span className="text-black font-semibold">{currency}</span></div>
+            </div>
+          </div>
+
+          {/* Project Title Card */}
+          <div className="mt-5 bg-[#F8F8FA] p-4 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 border border-black/5">
+            <div>
+              <div className="text-xs font-mono uppercase text-black/50 tracking-wider">
+                Build Name
+              </div>
+              <h1 className="text-xl font-bold text-black tracking-tight mt-0.5">
+                {store.name || "Custom PC Build"}
               </h1>
             </div>
 
-            <div className="sm:text-right font-mono text-[11px] text-black/70 space-y-0.5">
-              <div>DOC-ID: <span className="text-black font-semibold">{docId}</span></div>
-              <div>DATE: <span className="text-black font-semibold">{currentDate}</span></div>
-              <div>CURRENCY: <span className="text-black font-semibold">{currency}</span></div>
-            </div>
-          </div>
-
-          {/* Project Banner */}
-          <div className="mt-5 bg-[#F5F5F5] p-4 rounded-lg flex flex-col sm:flex-row sm:items-end justify-between gap-3">
-            <div>
-              <div className="font-mono text-[10px] uppercase text-black/50 tracking-wider">
-                PROJECT DESIGNATION
+            {wattage.hasData && (
+              <div className="inline-flex items-center gap-2 text-xs font-semibold text-black bg-white px-3 py-1.5 rounded-lg border border-black/10 shadow-xs">
+                <span className="w-2 h-2 rounded-full bg-black inline-block" />
+                <span>Estimated Power: {wattage.estimatedTdp}W TDP</span>
               </div>
-              <div className="font-mono text-xl font-bold text-black tracking-tight">
-                {store.name || "Untitled Build"}
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 font-mono text-xs text-black/80">
-              <span className="inline-block w-2 h-2 rounded-full bg-black" />
-              <span>
-                {wattage.hasData ? `SYSTEM DRAW: ${wattage.estimatedTdp}W TDP (EST.)` : "ESTIMATED DRAW: N/A"}
-              </span>
-            </div>
+            )}
           </div>
         </header>
 
-        {/* Bill of Materials Table */}
+        {/* Components Table */}
         <section className="mt-6">
           <table className="w-full text-left font-sans text-xs border-collapse">
             <thead>
-              <tr className="bg-black text-white font-mono text-[10px] tracking-wider uppercase">
-                <th className="py-2.5 px-3 font-medium w-12 text-center" scope="col">#</th>
-                <th className="py-2.5 px-3 font-medium w-32" scope="col">Category</th>
-                <th className="py-2.5 px-3 font-medium" scope="col">Component Name & Specifications</th>
-                <th className="py-2.5 px-3 font-medium w-40" scope="col">Store / Merchant</th>
-                <th className="py-2.5 px-3 font-medium text-right w-28" scope="col">Unit Price</th>
+              <tr className="bg-black text-white font-mono text-[11px] tracking-wider uppercase">
+                <th className="py-2.5 px-3 font-semibold w-12 text-center" scope="col">#</th>
+                <th className="py-2.5 px-3 font-semibold w-28" scope="col">Category</th>
+                <th className="py-2.5 px-3 font-semibold" scope="col">Component Name & Specs</th>
+                <th className="py-2.5 px-3 font-semibold w-36" scope="col">Store</th>
+                <th className="py-2.5 px-3 font-semibold text-right w-28" scope="col">Price</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-black/10">
               {items.length === 0 ? (
                 <tr>
-                  <td colSpan={5} className="py-8 text-center text-black/40 font-mono text-xs">
+                  <td colSpan={5} className="py-8 text-center text-black/50 font-mono text-xs">
                     No components added to this specification yet.
                   </td>
                 </tr>
@@ -136,37 +124,39 @@ export default function PrintableA4Page() {
 
                   return (
                     <tr key={item.id} className="hover:bg-black/[0.02]">
-                      <td className="py-2.5 px-3 font-mono text-[11px] text-center text-black/50">
+                      <td className="py-3 px-3 font-mono text-xs text-center text-black/50">
                         {String(idx + 1).padStart(2, "0")}
                       </td>
-                      <td className="py-2.5 px-3 font-mono text-[10px] uppercase font-semibold text-black/80">
+                      <td className="py-3 px-3 font-mono text-xs uppercase font-semibold text-black/80">
                         {item.category}
                       </td>
-                      <td className="py-2.5 px-3 space-y-0.5">
-                        <div className="font-medium text-black text-xs">{item.name}</div>
-                        <div className="font-mono text-[10px] text-black/60 flex flex-wrap gap-2">
+                      <td className="py-3 px-3 space-y-0.5">
+                        <div className="font-semibold text-black text-sm">{item.name}</div>
+                        <div className="font-mono text-xs text-black/70 flex flex-wrap gap-2 pt-0.5">
                           {item.specs.socket && <span>Socket: {item.specs.socket}</span>}
                           {item.specs.tdp && <span>TDP: {item.specs.tdp}W</span>}
                           {item.specs.capacity && <span>Cap: {item.specs.capacity}</span>}
                           {item.specs.memoryType && <span>RAM: {item.specs.memoryType}</span>}
+                          {item.specs.lengthMm && <span>Length: {item.specs.lengthMm}mm</span>}
+                          {item.specs.psuWattage && <span>Wattage: {item.specs.psuWattage}W</span>}
                         </div>
                       </td>
-                      <td className="py-2.5 px-3 font-mono text-[11px] text-black/70">
+                      <td className="py-3 px-3 font-mono text-xs text-black/80">
                         {item.url ? (
                           <a
                             href={item.url}
                             target="_blank"
                             rel="noreferrer noopener"
-                            className="inline-flex items-center gap-1 hover:underline text-black"
+                            className="inline-flex items-center gap-1 hover:underline text-black font-medium"
                           >
                             <span>{item.sourceDomain}</span>
-                            <ExternalLink className="h-2.5 w-2.5" />
+                            <ExternalLink className="h-3 w-3" />
                           </a>
                         ) : (
                           <span>{item.sourceDomain}</span>
                         )}
                       </td>
-                      <td className="py-2.5 px-3 font-mono text-xs font-semibold text-right text-black">
+                      <td className="py-3 px-3 font-mono text-xs font-bold text-right text-black">
                         {formatCurrency(converted.amount, currency)}
                       </td>
                     </tr>
@@ -176,13 +166,13 @@ export default function PrintableA4Page() {
             </tbody>
             <tfoot>
               <tr className="border-t-2 border-black bg-[#FAFAFA]">
-                <td colSpan={3} className="py-3 px-3 font-mono text-xs uppercase font-bold">
+                <td colSpan={3} className="py-3.5 px-3 font-mono text-sm uppercase font-bold text-black">
                   Total Estimated Build Cost
                 </td>
-                <td className="py-3 px-3 font-mono text-[11px] text-black/60">
+                <td className="py-3.5 px-3 font-mono text-xs text-black/70 font-medium">
                   {totals.itemCount} of {totals.totalSlots} parts
                 </td>
-                <td className="py-3 px-3 font-mono text-sm font-bold text-right">
+                <td className="py-3.5 px-3 font-mono text-base font-extrabold text-right text-black">
                   {formatCurrency(totals.total, currency)}
                 </td>
               </tr>
@@ -190,13 +180,12 @@ export default function PrintableA4Page() {
           </table>
         </section>
 
-        {/* Footer Audit Notice */}
-        <footer className="mt-12 pt-4 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between text-[10px] font-mono text-black/50 gap-2">
-          <div>Prices captured from linked stores. Converted to {currency} via real-time market rates.</div>
-          <div>ANYLINK PC BUILDER // CERTIFIED EXPORT</div>
+        {/* Clean Minimal Footer */}
+        <footer className="mt-12 pt-4 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between text-xs text-black/60 gap-2">
+          <div>Prices extracted from linked stores · Converted via real-time market rates.</div>
+          <div className="font-semibold text-black">AnyLink PC Builder</div>
         </footer>
       </article>
     </div>
   );
 }
-

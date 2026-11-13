@@ -19,6 +19,7 @@ import {
 import { getCurrentUser, signOutUser, UserSession } from "@/lib/auth/auth-service";
 import { useBuildStore, calculateBuildTotals } from "@/lib/store/build-store";
 import { formatCurrency } from "@/lib/currency/converter";
+import { AnyLinkMark } from "@/components/ui/logo";
 import {
   FolderGit2,
   Plus,
@@ -27,7 +28,6 @@ import {
   ExternalLink,
   Edit2,
   Check,
-  Cpu,
   LogOut,
 } from "lucide-react";
 
@@ -160,7 +160,7 @@ export default function MyBuildsPage() {
           {builds.length === 0 ? (
             <GlassCard className="p-12 text-center space-y-5 border border-dashed border-outline">
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-surface-highest/40 text-foreground">
-                <Cpu className="h-7 w-7" />
+                <AnyLinkMark size={28} />
               </div>
               <div className="space-y-1.5 max-w-sm mx-auto">
                 <h2 className="text-lg font-semibold text-foreground">

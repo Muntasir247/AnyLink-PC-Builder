@@ -7,13 +7,14 @@ import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { GlassCard } from "@/components/ui/glass-card";
+import { AnyLinkIconBadge } from "@/components/ui/logo";
 import {
   signInWithEmail,
   signInWithMagicLink,
   signInWithGoogle,
 } from "@/lib/auth/auth-service";
 import { migrateGuestBuild } from "@/lib/builds/build-service";
-import { Eye, EyeOff, ArrowRight, Cpu, Check } from "lucide-react";
+import { Eye, EyeOff, ArrowRight, Check } from "lucide-react";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -87,9 +88,7 @@ export default function LoginPage() {
             href="/"
             className="inline-flex items-center gap-2 text-foreground font-semibold text-xl tracking-tight"
           >
-            <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-foreground text-background">
-              <Cpu className="h-4 w-4" />
-            </div>
+            <AnyLinkIconBadge />
             <span>AnyLink</span>
           </Link>
         </div>

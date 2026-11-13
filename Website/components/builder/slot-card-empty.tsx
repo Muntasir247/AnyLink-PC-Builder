@@ -85,7 +85,7 @@ export function SlotCardEmpty({
 
         <div className="space-y-0.5 min-w-0">
           <div className="flex items-center gap-2">
-            <span className="font-mono text-[10px] uppercase tracking-wider text-on-surface-muted">
+            <span className="font-mono text-xs uppercase tracking-wider text-on-surface-variant font-semibold">
               {category}
             </span>
             {isActive && (
@@ -94,17 +94,17 @@ export function SlotCardEmpty({
               </span>
             )}
           </div>
-          <h3 className="font-medium text-sm sm:text-base text-foreground tracking-tight truncate">
+          <h3 className="font-semibold text-sm sm:text-base text-foreground tracking-tight truncate">
             {label}
           </h3>
-          <p className="text-xs text-on-surface-variant truncate">
+          <p className="text-xs text-on-surface-variant font-medium truncate">
             {description}
           </p>
         </div>
       </div>
 
-      <div className="flex items-center gap-1.5 text-xs text-on-surface-muted group-hover:text-foreground transition-colors shrink-0 ml-3">
-        <span className="hidden sm:inline-block font-mono text-[11px]">
+      <div className="flex items-center gap-1.5 text-xs text-on-surface-variant font-medium group-hover:text-foreground transition-colors shrink-0 ml-3">
+        <span className="hidden sm:inline-block font-mono text-xs">
           Paste link to add
         </span>
         <Plus className="h-4 w-4" />
